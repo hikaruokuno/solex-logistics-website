@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="SOLEX LOGISTICSのサービス紹介。一般貨物輸送から軽貨物配送まで、お客様のニーズに合わせた物流サービスを提供します。">
+    <meta name="keywords" content="SOLEX LOGISTICS,サービス,一般貨物,軽貨物,配送,物流">
+    <title>サービス紹介 - 株式会社SOLEX LOGISTICS</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <meta name="theme-color" content="#1E88E5">
+</head>
+<body class="font-sans text-text-gray">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <a href="index.html">
+                        <img src="images/logo/logo_temp.png" alt="SOLEX LOGISTICS" class="h-12 md:h-16">
+                    </a>
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li><a href="index.html" class="hover:text-primary-blue transition-colors">ホーム</a></li>
+                    <li><a href="about.html" class="hover:text-primary-blue transition-colors">会社案内</a></li>
+                    <li><a href="services.html" class="text-primary-blue font-bold">サービス</a></li>
+                    <li><a href="recruit.html" class="hover:text-primary-blue transition-colors">求人情報</a></li>
+                    <li><a href="contact.html" class="hover:text-primary-blue transition-colors">お問い合わせ</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </nav>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <ul class="space-y-2">
+                    <li><a href="index.html" class="block py-2 hover:text-primary-blue transition-colors">ホーム</a></li>
+                    <li><a href="about.html" class="block py-2 hover:text-primary-blue transition-colors">会社案内</a></li>
+                    <li><a href="services.html" class="block py-2 text-primary-blue font-bold">サービス</a></li>
+                    <li><a href="recruit.html" class="block py-2 hover:text-primary-blue transition-colors">求人情報</a></li>
+                    <li><a href="contact.html" class="block py-2 hover:text-primary-blue transition-colors">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Page Hero -->
+    <section class="bg-gradient-to-br from-dark-blue to-primary-blue text-white pt-32 pb-16">
+        <div class="container mx-auto px-4">
+            <h1 class="text-4xl md:text-5xl font-bold text-center mb-4">サービス紹介</h1>
+            <p class="text-center text-lg">お客様のニーズに合わせた最適な物流ソリューション</p>
+        </div>
+    </section>
+
+    <!-- Service Overview -->
+    <section class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center mb-12">
+                <h2 class="text-3xl font-bold text-dark-blue mb-6">SOLEX LOGISTICSの物流サービス</h2>
+                <p class="text-lg leading-relaxed">
+                    創業以来25年間培ってきた経験とノウハウを活かし、<br>
+                    お客様の大切な荷物を安全・確実にお届けします。
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <!-- General Cargo -->
+                <div class="bg-light-gray rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="images/service-general_20250630_182518_1.png" alt="一般貨物輸送" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-primary-blue mb-3">一般貨物輸送</h3>
+                        <p class="mb-4">大型・中型トラックによる企業間物流</p>
+                        <a href="#general" class="inline-flex items-center text-primary-blue hover:text-secondary-blue font-bold">
+                            詳しく見る
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Light Cargo -->
+                <div class="bg-light-gray rounded-lg overflow-hidden shadow-lg hover:shadow-xl transition-shadow">
+                    <img src="images/service-light_20250630_182618_1.png" alt="軽貨物配送" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="text-2xl font-bold text-accent-orange mb-3">軽貨物配送</h3>
+                        <p class="mb-4">個人宅への配送やラストワンマイル配送</p>
+                        <a href="#light" class="inline-flex items-center text-accent-orange hover:text-light-orange font-bold">
+                            詳しく見る
+                            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- General Cargo Service -->
+    <section id="general" class="py-16 bg-light-gray">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div>
+                        <h2 class="text-3xl font-bold text-dark-blue mb-6">一般貨物輸送</h2>
+                        <p class="mb-6 leading-relaxed">
+                            大型トラック15台、中型トラック25台を保有し、
+                            関東全域から全国各地への輸送に対応。
+                            パレット単位の大量輸送から、精密機器の慎重な輸送まで、
+                            あらゆるニーズにお応えします。
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start">
+                                <svg class="w-6 h-6 text-primary-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold mb-1">定期便サービス</h4>
+                                    <p class="text-sm">決まった曜日・時間での定期配送</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <svg class="w-6 h-6 text-primary-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold mb-1">スポット便</h4>
+                                    <p class="text-sm">急な配送依頼にも柔軟に対応</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <svg class="w-6 h-6 text-primary-blue mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                                </svg>
+                                <div>
+                                    <h4 class="font-bold mb-1">温度管理輸送</h4>
+                                    <p class="text-sm">冷蔵・冷凍車による食品輸送</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-8 rounded-lg shadow-lg">
+                        <h3 class="text-xl font-bold text-primary-blue mb-4">対応車両</h3>
+                        <ul class="space-y-3">
+                            <li class="flex justify-between items-center pb-3 border-b">
+                                <span>10t車</span>
+                                <span class="font-bold text-primary-blue">8台</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-3 border-b">
+                                <span>7t車</span>
+                                <span class="font-bold text-primary-blue">7台</span>
+                            </li>
+                            <li class="flex justify-between items-center pb-3 border-b">
+                                <span>4t車</span>
+                                <span class="font-bold text-primary-blue">15台</span>
+                            </li>
+                            <li class="flex justify-between items-center">
+                                <span>2t車</span>
+                                <span class="font-bold text-primary-blue">10台</span>
+                            </li>
+                        </ul>
+                        
+                        <div class="mt-6 p-4 bg-blue-50 rounded">
+                            <p class="text-sm">
+                                <span class="font-bold">営業エリア：</span><br>
+                                関東全域を中心に全国対応可能
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Light Cargo Service -->
+    <section id="light" class="py-16 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-6xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="order-2 md:order-1">
+                        <div class="bg-light-gray p-8 rounded-lg shadow-lg">
+                            <h3 class="text-xl font-bold text-accent-orange mb-4">サービスの特徴</h3>
+                            
+                            <div class="space-y-4">
+                                <div class="bg-white p-4 rounded">
+                                    <h4 class="font-bold text-dark-blue mb-2">女性ドライバー活躍中</h4>
+                                    <p class="text-sm">お客様により丁寧で安心感のある配送サービスを提供</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded">
+                                    <h4 class="font-bold text-dark-blue mb-2">時間指定配送</h4>
+                                    <p class="text-sm">午前中から21時まで、細かな時間指定に対応</p>
+                                </div>
+                                
+                                <div class="bg-white p-4 rounded">
+                                    <h4 class="font-bold text-dark-blue mb-2">再配達削減</h4>
+                                    <p class="text-sm">事前連絡サービスで不在配達を最小限に</p>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-6 text-center">
+                                <p class="text-sm font-bold text-accent-orange">
+                                    軽貨物車両30台で<br>
+                                    きめ細やかな配送を実現
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="order-1 md:order-2">
+                        <h2 class="text-3xl font-bold text-dark-blue mb-6">軽貨物配送</h2>
+                        <p class="mb-6 leading-relaxed">
+                            ECサイトの普及により需要が高まる個人宅配送。
+                            軽貨物車両の機動力を活かし、
+                            狭い道路や住宅街でもスムーズな配送を実現。
+                            女性ドライバーも多数活躍中で、
+                            お客様に安心感のあるサービスを提供しています。
+                        </p>
+                        
+                        <div class="bg-orange-50 p-6 rounded-lg">
+                            <h4 class="font-bold text-accent-orange mb-3">こんなお客様におすすめ</h4>
+                            <ul class="space-y-2">
+                                <li class="flex items-center">
+                                    <span class="text-accent-orange mr-2">●</span>
+                                    ECサイトを運営されている企業様
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-accent-orange mr-2">●</span>
+                                    個人宅への定期配送が必要な企業様
+                                </li>
+                                <li class="flex items-center">
+                                    <span class="text-accent-orange mr-2">●</span>
+                                    小ロット・多頻度配送をご希望の企業様
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Services -->
+    <section class="py-16 bg-light-gray">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <h2 class="text-3xl font-bold text-dark-blue mb-8 text-center">その他のサービス</h2>
+                
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="text-xl font-bold text-primary-blue mb-3">倉庫保管サービス</h3>
+                        <p class="text-sm mb-4">
+                            自社倉庫での商品保管から出荷まで一括管理。
+                            在庫管理システムによりリアルタイムで在庫状況を確認可能。
+                        </p>
+                        <ul class="text-sm space-y-1">
+                            <li>・常温倉庫：3,000㎡</li>
+                            <li>・冷蔵倉庫：500㎡</li>
+                            <li>・24時間セキュリティ完備</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h3 class="text-xl font-bold text-primary-blue mb-3">物流コンサルティング</h3>
+                        <p class="text-sm mb-4">
+                            25年の経験を活かし、お客様の物流課題を解決。
+                            コスト削減から配送品質向上まで総合的にサポート。
+                        </p>
+                        <ul class="text-sm space-y-1">
+                            <li>・物流コスト診断</li>
+                            <li>・配送ルート最適化</li>
+                            <li>・物流システム構築支援</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-16 bg-gradient-to-r from-primary-blue to-secondary-blue text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold mb-8">
+                物流のお悩みはSOLEX LOGISTICSにお任せください
+            </h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">
+                お見積もりは無料です。まずはお気軽にご相談ください。
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="contact.html" class="inline-block bg-white text-primary-blue hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition-colors">
+                    お問い合わせ・お見積もり
+                </a>
+                <a href="tel:0120-XXX-XXX" class="inline-block bg-accent-orange hover:bg-light-orange text-white px-8 py-4 rounded-full font-bold transition-colors">
+                    電話で相談 0120-XXX-XXX
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-blue text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold mb-4">会社情報</h3>
+                    <p class="text-sm">株式会社SOLEX LOGISTICS<br>
+                    創業25年の信頼と実績</p>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">サービス</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="#general" class="hover:text-light-orange">一般貨物輸送</a></li>
+                        <li><a href="#light" class="hover:text-light-orange">軽貨物配送</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">採用情報</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="recruit.html" class="hover:text-light-orange">女性ドライバー募集</a></li>
+                        <li><a href="recruit.html#benefits" class="hover:text-light-orange">福利厚生</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">お問い合わせ</h3>
+                    <a href="contact.html" class="inline-block bg-accent-orange hover:bg-light-orange px-6 py-2 rounded text-sm font-bold transition-colors">
+                        お問い合わせフォーム
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2024 SOLEX LOGISTICS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

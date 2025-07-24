@@ -1,0 +1,29 @@
+{
+  "project_name": "solex-logistics",
+  "prompt": "Anime-style illustration of a smiling female truck driver standing in front of a delivery truck. She is wearing professional work clothes (coveralls or work uniform). The character has a bright, welcoming expression with anime/manga art style. The background shows a modern delivery truck. The color scheme should complement blue and orange colors. Professional yet friendly appearance. High quality anime illustration.",
+  "timestamp": "20250701_194553",
+  "parameters": {
+    "size": "1024x1024",
+    "output_format": "png"
+  },
+  "config_used": {
+    "project_name": "solex-logistics",
+    "output_dir": "./images",
+    "filename_prefix": "hero",
+    "default_model": "gpt-image-1",
+    "default_size": "1536x1024",
+    "default_output_format": "png",
+    "default_quality": "high",
+    "default_n": 1,
+    "default_moderation": "auto"
+  },
+  "files": [
+    "./images/female-driver-anime_20250701_194553_1.png"
+  ],
+  "model": "gpt-image-1",
+  "generation_info": {
+    "size": "1024x1024",
+    "output_format": "png",
+    "n": 1
+  }
+}

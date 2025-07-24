@@ -1,0 +1,28 @@
+{
+  "project_name": "solex-logistics",
+  "prompt": "Light cargo truck, compact delivery vehicle, orange and blue corporate colors, side view, modern design, clean white background, realistic style",
+  "timestamp": "20250630_182618",
+  "parameters": {
+    "size": "1024x1024"
+  },
+  "config_used": {
+    "project_name": "solex-logistics",
+    "output_dir": "./images",
+    "filename_prefix": "solex",
+    "default_model": "gpt-image-1",
+    "default_size": "1024x1024",
+    "default_output_format": "png",
+    "default_n": 1,
+    "default_moderation": "auto",
+    "default_quality": "medium"
+  },
+  "files": [
+    "./images/service-light_20250630_182618_1.png"
+  ],
+  "model": "gpt-image-1",
+  "generation_info": {
+    "size": "1024x1024",
+    "output_format": "png",
+    "n": 1
+  }
+}

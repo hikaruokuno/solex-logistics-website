@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://solex-logistics.com/sitemap.xml
+
+# Optimize crawling
+Crawl-delay: 1
+
+# Block access to sensitive areas
+Disallow: /private/
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Allow important pages
+Allow: /index.html
+Allow: /about.html
+Allow: /services.html
+Allow: /recruit.html
+Allow: /contact.html
+
+# Allow resources
+Allow: /css/
+Allow: /js/
+Allow: /images/

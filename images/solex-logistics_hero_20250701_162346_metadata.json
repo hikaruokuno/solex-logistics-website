@@ -1,0 +1,28 @@
+{
+  "project_name": "solex-logistics",
+  "prompt": "Anime style portrait of professional Japanese female truck driver. Modern anime art style with clean vector-like illustration. Corporate uniform in blue (#1E88E5) and orange (#FF8F00) colors. Confident smile, professional appearance. Mobile-optimized square format. Studio Ghibli inspired professional character design. High quality digital anime art.",
+  "timestamp": "20250701_162346",
+  "parameters": {
+    "size": "1024x1024"
+  },
+  "config_used": {
+    "project_name": "solex-logistics",
+    "output_dir": "./images",
+    "filename_prefix": "hero",
+    "default_model": "gpt-image-1",
+    "default_size": "1536x1024",
+    "default_output_format": "png",
+    "default_quality": "high",
+    "default_n": 1,
+    "default_moderation": "auto"
+  },
+  "files": [
+    "./images/solex-logistics_hero_20250701_162346_1.png"
+  ],
+  "model": "gpt-image-1",
+  "generation_info": {
+    "size": "1024x1024",
+    "output_format": "png",
+    "n": 1
+  }
+}

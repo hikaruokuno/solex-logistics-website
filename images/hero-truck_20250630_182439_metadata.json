@@ -1,0 +1,28 @@
+{
+  "project_name": "solex-logistics",
+  "prompt": "Modern logistics truck on Japanese highway, professional corporate photography, blue SOLEX LOGISTICS truck, clean commercial vehicle, daytime with clear sky, realistic photography style",
+  "timestamp": "20250630_182439",
+  "parameters": {
+    "size": "1536x1024"
+  },
+  "config_used": {
+    "project_name": "solex-logistics",
+    "output_dir": "./images",
+    "filename_prefix": "solex",
+    "default_model": "gpt-image-1",
+    "default_size": "1024x1024",
+    "default_output_format": "png",
+    "default_n": 1,
+    "default_moderation": "auto",
+    "default_quality": "medium"
+  },
+  "files": [
+    "./images/hero-truck_20250630_182439_1.png"
+  ],
+  "model": "gpt-image-1",
+  "generation_info": {
+    "size": "1536x1024",
+    "output_format": "png",
+    "n": 1
+  }
+}

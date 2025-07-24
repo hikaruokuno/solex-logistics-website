@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="株式会社SOLEX LOGISTICSは25年の信頼と実績を新たな名前で。女性ドライバーも活躍できる運送会社として、一般貨物・軽貨物の配送サービスを提供しています。">
+    <meta name="keywords" content="SOLEX LOGISTICS,運送会社,女性ドライバー,一般貨物,軽貨物,求人,配送,物流">
+    <title>株式会社SOLEX LOGISTICS - 25年の信頼と実績を新たな名前で</title>
+    
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="tailwind.config.js"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <meta name="theme-color" content="#1E88E5">
+    
+    <!-- Custom Styles -->
+    <style>
+        [x-cloak] { display: none !important; }
+    </style>
+</head>
+<body class="font-sans text-text-gray">
+    <!-- Header -->
+    <header class="fixed top-0 w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-4">
+            <nav class="flex items-center justify-between h-20">
+                <!-- Logo -->
+                <div class="flex items-center">
+                    <img src="images/logo/logo_20250630_182319_1.png" alt="SOLEX LOGISTICS" class="h-12">
+                </div>
+                
+                <!-- Desktop Navigation -->
+                <ul class="hidden md:flex items-center space-x-8">
+                    <li><a href="#home" class="hover:text-primary-blue transition-colors">ホーム</a></li>
+                    <li><a href="about.html" class="hover:text-primary-blue transition-colors">会社案内</a></li>
+                    <li><a href="services.html" class="hover:text-primary-blue transition-colors">サービス</a></li>
+                    <li><a href="recruit.html" class="hover:text-primary-blue transition-colors">求人情報</a></li>
+                    <li><a href="contact.html" class="hover:text-primary-blue transition-colors">お問い合わせ</a></li>
+                </ul>
+                
+                <!-- Mobile Menu Button -->
+                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </nav>
+            
+            <!-- Mobile Navigation -->
+            <div id="mobileMenu" class="hidden md:hidden pb-4">
+                <ul class="space-y-2">
+                    <li><a href="#home" class="block py-2 hover:text-primary-blue transition-colors">ホーム</a></li>
+                    <li><a href="about.html" class="block py-2 hover:text-primary-blue transition-colors">会社案内</a></li>
+                    <li><a href="services.html" class="block py-2 hover:text-primary-blue transition-colors">サービス</a></li>
+                    <li><a href="recruit.html" class="block py-2 hover:text-primary-blue transition-colors">求人情報</a></li>
+                    <li><a href="contact.html" class="block py-2 hover:text-primary-blue transition-colors">お問い合わせ</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative h-screen flex items-center justify-center mt-20">
+        <div class="absolute inset-0 bg-gradient-to-br from-dark-blue to-primary-blue opacity-90"></div>
+        <img src="images/solex-logistics_hero_20250701_162253_1.png" alt="SOLEX LOGISTICS トラック" class="absolute inset-0 w-full h-full object-cover">
+        
+        <div class="relative z-10 text-center text-white px-4">
+            <h1 class="text-4xl md:text-6xl font-bold mb-6">
+                25年の信頼と実績を<br>
+                新たな名前で
+            </h1>
+            <p class="text-lg md:text-2xl mb-8">
+                株式会社SOLEX → 株式会社SOLEX LOGISTICS
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="about.html" class="bg-accent-orange hover:bg-light-orange text-white px-8 py-4 rounded-full font-bold transition-colors">
+                    社名変更について
+                </a>
+                <a href="recruit.html" class="bg-white text-primary-blue hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition-colors">
+                    女性ドライバー募集中
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Company Name Change Notice -->
+    <section class="py-20 bg-light-gray">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                    <h2 class="text-3xl md:text-4xl font-bold text-dark-blue mb-6">
+                        社名変更のお知らせ
+                    </h2>
+                    <p class="text-lg mb-8 leading-relaxed">
+                        平素は格別のご高配を賜り、厚く御礼申し上げます。<br>
+                        この度、弊社は創業25年を機に、<br>
+                        <span class="font-bold text-primary-blue">「株式会社SOLEX」</span>から
+                        <span class="font-bold text-accent-orange">「株式会社SOLEX LOGISTICS」</span>へ<br>
+                        社名を変更させていただくことになりました。
+                    </p>
+                    <div class="bg-blue-50 p-6 rounded-lg">
+                        <p class="text-base mb-4">
+                            これまでの歴史と伝統を大切にしながら、<br>
+                            物流業界の変化に対応し、お客様により良いサービスを<br>
+                            提供できるよう、社員一同邁進してまいります。
+                        </p>
+                        <p class="font-bold text-primary-blue">
+                            今後とも変わらぬご愛顧を賜りますよう、<br>
+                            よろしくお願い申し上げます。
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="py-20">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl md:text-4xl font-bold text-center text-dark-blue mb-12">
+                SOLEX LOGISTICSの強み
+            </h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Feature 1 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">25年の信頼実績</h3>
+                    <p>創業以来、地域に根ざした確かな物流サービスを提供</p>
+                </div>
+                
+                <!-- Feature 2 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">女性が活躍できる職場</h3>
+                    <p>女性ドライバーも働きやすい環境づくりに注力</p>
+                </div>
+                
+                <!-- Feature 3 -->
+                <div class="text-center">
+                    <div class="w-20 h-20 bg-secondary-blue rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">迅速・確実な配送</h3>
+                    <p>一般貨物から軽貨物まで、お客様のニーズに合わせた配送サービス</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-primary-blue to-secondary-blue text-white">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-8">
+                女性ドライバー積極採用中！
+            </h2>
+            <p class="text-lg mb-8 max-w-2xl mx-auto">
+                SOLEX LOGISTICSでは、女性が安心して働ける環境を整備。<br>
+                未経験者も大歓迎！充実した研修制度でサポートします。
+            </p>
+            <a href="recruit.html" class="inline-block bg-white text-primary-blue hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition-colors">
+                求人情報を見る
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark-blue text-white py-12">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="font-bold mb-4">会社情報</h3>
+                    <p class="text-sm">株式会社SOLEX LOGISTICS<br>
+                    創業25年の信頼と実績</p>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">サービス</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="services.html#general" class="hover:text-light-orange">一般貨物輸送</a></li>
+                        <li><a href="services.html#light" class="hover:text-light-orange">軽貨物配送</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">採用情報</h3>
+                    <ul class="text-sm space-y-2">
+                        <li><a href="recruit.html" class="hover:text-light-orange">女性ドライバー募集</a></li>
+                        <li><a href="recruit.html#benefits" class="hover:text-light-orange">福利厚生</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="font-bold mb-4">お問い合わせ</h3>
+                    <a href="contact.html" class="inline-block bg-accent-orange hover:bg-light-orange px-6 py-2 rounded text-sm font-bold transition-colors">
+                        お問い合わせフォーム
+                    </a>
+                </div>
+            </div>
+            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-sm">
+                <p>&copy; 2024 SOLEX LOGISTICS. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script>
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+    </script>
+</body>
+</html>

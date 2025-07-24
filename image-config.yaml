@@ -1,0 +1,23 @@
+# SOLEX LOGISTICS - Hero Section Image Generation
+# Modern 2025 hero section images configuration
+
+project_name: "solex-logistics"
+output_dir: "./images"
+filename_prefix: "hero"
+
+# Default generation parameters for high-quality hero images
+default_model: "gpt-image-1"
+default_size: "1536x1024"  # Wide banner format for hero sections  
+default_quality: "high"    # High quality for professional appearance
+default_n: 1
+
+# Image specifications based on CSS analysis
+# All images should maintain professional, corporate appearance
+# Colors should align with brand palette: blue (#1E88E5) and orange (#FF8F00)
+
+# Key requirements:
+# - Professional logistics/transportation theme
+# - Japanese corporate style
+# - High quality for web use
+# - Consistent brand colors
+# - Female driver representation where applicable

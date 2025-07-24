@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="株式会社SOLEX LOGISTICSへのお問い合わせページ。求人、サービス、会社見学など各種お問い合わせを承っております。">
+    <meta name="keywords" content="SOLEX LOGISTICS,お問い合わせ,求人相談,サービス相談,会社見学,運送,物流">
+    <title>お問い合わせ - 株式会社SOLEX LOGISTICS</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/placeholders.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/contact.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "株式会社SOLEX LOGISTICS",
+        "url": "https://solex-logistics.com",
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "telephone": "+81-3-0000-0000",
+            "contactType": "customer service",
+            "availableLanguage": "Japanese",
+            "hoursAvailable": "Mo-Fr 09:00-18:00"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "○○町1-2-3",
+            "addressLocality": "○○区",
+            "addressRegion": "東京都",
+            "postalCode": "000-0000",
+            "addressCountry": "JP"
+        }
+    }
+    </script>
+</head>
+<body data-page="contact">
+    <!-- Header -->
+    <header class="header" role="banner">
+        <div class="header__container">
+            <div class="header__logo">
+                <a href="index.html">
+                    <div class="placeholder placeholder--logo placeholder--logo-header" aria-label="株式会社SOLEX LOGISTICS ロゴ"></div>
+                </a>
+            </div>
+            
+            <nav class="header__nav" role="navigation" aria-label="メインナビゲーション">
+                <button class="header__nav-toggle" aria-label="メニュー開閉" aria-expanded="false">
+                    <span class="header__nav-toggle-line"></span>
+                    <span class="header__nav-toggle-line"></span>
+                    <span class="header__nav-toggle-line"></span>
+                </button>
+                
+                <ul class="header__nav-list">
+                    <li class="header__nav-item">
+                        <a href="index.html" class="header__nav-link" data-page="index">トップ</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="about.html" class="header__nav-link" data-page="about">会社案内</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="services.html" class="header__nav-link" data-page="services">サービス</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="recruit.html" class="header__nav-link header__nav-link--highlight" data-page="recruit">求人情報</a>
+                    </li>
+                    <li class="header__nav-item">
+                        <a href="contact.html" class="header__nav-link" data-page="contact">お問い合わせ</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="パンくずナビゲーション">
+        <div class="breadcrumb__container">
+            <ol class="breadcrumb__list">
+                <li class="breadcrumb__item">
+                    <a href="index.html" class="breadcrumb__link">トップ</a>
+                </li>
+                <li class="breadcrumb__item">
+                    <span class="breadcrumb__current">お問い合わせ</span>
+                </li>
+            </ol>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <section class="page-header" aria-labelledby="page-title">
+        <div class="page-header__content">
+            <h1 id="page-title" class="page-header__title">お問い合わせ</h1>
+            <p class="page-header__subtitle">
+                お気軽にご相談ください<br>
+                求人、サービス、会社見学など何でも承ります
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main role="main" class="page-content">
+        
+        <!-- Contact Method Selection -->
+        <section class="section section--light" aria-labelledby="contact-methods-title">
+            <div class="section__container">
+                <div class="section__header">
+                    <h2 id="contact-methods-title" class="section__title">お問い合わせ方法をお選びください</h2>
+                    <p class="section__subtitle">
+                        目的に応じて最適なお問い合わせ方法をご案内します
+                    </p>
+                </div>
+
+                <div class="contact-methods">
+                    <div class="contact-methods__grid">
+                        <div class="contact-method" data-method="recruit">
+                            <div class="contact-method__icon">👩‍💼</div>
+                            <h3 class="contact-method__title">求人に関するお問い合わせ</h3>
+                            <p class="contact-method__description">
+                                女性ドライバー募集、勤務条件、<br>
+                                働き方についてのご相談
+                            </p>
+                            <ul class="contact-method__features">
+                                <li>面接のご予約</li>
+                                <li>職場見学のお申し込み</li>
+                                <li>勤務条件のご相談</li>
+                                <li>研修制度について</li>
+                            </ul>
+                            <div class="contact-method__action">
+                                <button class="btn btn--primary" onclick="selectContactMethod('recruit')">
+                                    求人について相談
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="contact-method" data-method="service">
+                            <div class="contact-method__icon">🚚</div>
+                            <h3 class="contact-method__title">サービスに関するお問い合わせ</h3>
+                            <p class="contact-method__description">
+                                配送サービス、料金、<br>
+                                契約についてのご相談
+                            </p>
+                            <ul class="contact-method__features">
+                                <li>配送料金のお見積り</li>
+                                <li>定期配送のご相談</li>
+                                <li>急ぎの配送について</li>
+                                <li>エリア・対応可能荷物</li>
+                            </ul>
+                            <div class="contact-method__action">
+                                <button class="btn btn--primary" onclick="selectContactMethod('service')">
+                                    サービスについて相談
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="contact-method" data-method="visit">
+                            <div class="contact-method__icon">🏢</div>
+                            <h3 class="contact-method__title">会社見学のお申し込み</h3>
+                            <p class="contact-method__description">
+                                職場環境、設備の見学、<br>
+                                会社説明会のご予約
+                            </p>
+                            <ul class="contact-method__features">
+                                <li>職場見学ツアー</li>
+                                <li>女性専用設備のご案内</li>
+                                <li>車両・設備の見学</li>
+                                <li>先輩スタッフとの懇談</li>
+                            </ul>
+                            <div class="contact-method__action">
+                                <button class="btn btn--primary" onclick="selectContactMethod('visit')">
+                                    見学を申し込む
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="contact-method" data-method="other">
+                            <div class="contact-method__icon">📧</div>
+                            <h3 class="contact-method__title">その他のお問い合わせ</h3>
+                            <p class="contact-method__description">
+                                会社情報、取材依頼、<br>
+                                その他一般的なご質問
+                            </p>
+                            <ul class="contact-method__features">
+                                <li>会社に関するご質問</li>
+                                <li>取材・メディア対応</li>
+                                <li>協力会社募集</li>
+                                <li>その他一般的なご質問</li>
+                            </ul>
+                            <div class="contact-method__action">
+                                <button class="btn btn--primary" onclick="selectContactMethod('other')">
+                                    その他の相談
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Main Contact Form -->
+        <section class="section section--gray" aria-labelledby="contact-form-title" id="contact-form">
+            <div class="section__container">
+                <div class="section__header">
+                    <h2 id="contact-form-title" class="section__title">お問い合わせフォーム</h2>
+                    <p class="section__subtitle">
+                        以下のフォームにご記入ください<br>
+                        24時間以内にご返信いたします
+                    </p>
+                </div>
+
+                <div class="contact-form">
+                    <div class="contact-form__content">
+                        <div class="contact-form__intro">
+                            <h3>お気軽にお問い合わせください</h3>
+                            <p>
+                                ご不明な点やご相談がございましたら、何でもお聞かせください。<br>
+                                担当者より迅速にご対応させていただきます。
+                            </p>
+                        </div>
+                        
+                        <form class="form" id="contactForm" action="#" method="post" novalidate>
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label for="inquiry-type" class="form__label form__label--required">お問い合わせ種別</label>
+                                    <select id="inquiry-type" name="inquiry_type" class="form__select" required>
+                                        <option value="">選択してください</option>
+                                        <option value="recruit">求人に関するお問い合わせ</option>
+                                        <option value="service">サービスに関するお問い合わせ</option>
+                                        <option value="visit">会社見学のお申し込み</option>
+                                        <option value="estimate">お見積りのご依頼</option>
+                                        <option value="partnership">協力会社・業務提携</option>
+                                        <option value="media">取材・メディア関連</option>
+                                        <option value="other">その他</option>
+                                    </select>
+                                    <div class="form__error" id="inquiry-type-error"></div>
+                                </div>
+                            </div>
+
+                            <div class="form__row--half">
+                                <div class="form__group">
+                                    <label for="company-name" class="form__label">会社名・団体名</label>
+                                    <input type="text" id="company-name" name="company_name" class="form__input">
+                                    <div class="form__error" id="company-name-error"></div>
+                                </div>
+                                <div class="form__group">
+                                    <label for="contact-name" class="form__label form__label--required">お名前</label>
+                                    <input type="text" id="contact-name" name="contact_name" class="form__input" required>
+                                    <div class="form__error" id="contact-name-error"></div>
+                                </div>
+                            </div>
+
+                            <div class="form__row--half">
+                                <div class="form__group">
+                                    <label for="phone" class="form__label form__label--required">電話番号</label>
+                                    <input type="tel" id="phone" name="phone" class="form__input" required>
+                                    <div class="form__error" id="phone-error"></div>
+                                </div>
+                                <div class="form__group">
+                                    <label for="email" class="form__label form__label--required">メールアドレス</label>
+                                    <input type="email" id="email" name="email" class="form__input" required>
+                                    <div class="form__error" id="email-error"></div>
+                                </div>
+                            </div>
+
+                            <!-- Dynamic fields based on inquiry type -->
+                            <div class="form__dynamic-fields" id="dynamic-fields">
+                                <!-- Recruit-specific fields -->
+                                <div class="form__dynamic-section" id="recruit-fields" style="display: none;">
+                                    <h3 class="form__section-title">求人に関する詳細</h3>
+                                    <div class="form__row">
+                                        <div class="form__group">
+                                            <label for="position-interest" class="form__label">希望職種</label>
+                                            <select id="position-interest" name="position_interest" class="form__select">
+                                                <option value="">選択してください</option>
+                                                <option value="general">一般貨物ドライバー</option>
+                                                <option value="light">軽貨物ドライバー</option>
+                                                <option value="both">どちらでも</option>
+                                                <option value="office">事務職</option>
+                                                <option value="other">その他</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="form__row">
+                                        <div class="form__group">
+                                            <label class="form__label">希望する相談内容</label>
+                                            <div class="form__checkbox-group">
+                                                <label class="form__checkbox-label">
+                                                    <input type="checkbox" name="recruit_interests[]" value="interview" class="form__checkbox">
+                                                    面接のご予約
+                                                </label>
+                                                <label class="form__checkbox-label">
+                                                    <input type="checkbox" name="recruit_interests[]" value="visit" class="form__checkbox">
+                                                    職場見学
+                                                </label>
+                                                <label class="form__checkbox-label">
+                                                    <input type="checkbox" name="recruit_interests[]" value="conditions" class="form__checkbox">
+                                                    勤務条件の相談
+                                                </label>
+                                                <label class="form__checkbox-label">
+                                                    <input type="checkbox" name="recruit_interests[]" value="training" class="form__checkbox">
+                                                    研修制度について
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Service-specific fields -->
+                                <div class="form__dynamic-section" id="service-fields" style="display: none;">
+                                    <h3 class="form__section-title">サービスに関する詳細</h3>
+                                    <div class="form__row--half">
+                                        <div class="form__group">
+                                            <label for="service-type" class="form__label">ご希望のサービス</label>
+                                            <select id="service-type" name="service_type" class="form__select">
+                                                <option value="">選択してください</option>
+                                                <option value="general">一般貨物運送</option>
+                                                <option value="light">軽貨物運送</option>
+                                                <option value="regular">定期便</option>
+                                                <option value="urgent">緊急配送</option>
+                                                <option value="other">その他</option>
+                                            </select>
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="cargo-type" class="form__label">貨物の種類</label>
+                                            <input type="text" id="cargo-type" name="cargo_type" class="form__input" placeholder="例：機械部品、食品、日用品など">
+                                        </div>
+                                    </div>
+                                    <div class="form__row--half">
+                                        <div class="form__group">
+                                            <label for="pickup-area" class="form__label">集荷地域</label>
+                                            <input type="text" id="pickup-area" name="pickup_area" class="form__input" placeholder="例：東京都渋谷区">
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="delivery-area" class="form__label">配送地域</label>
+                                            <input type="text" id="delivery-area" name="delivery_area" class="form__input" placeholder="例：神奈川県横浜市">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Visit-specific fields -->
+                                <div class="form__dynamic-section" id="visit-fields" style="display: none;">
+                                    <h3 class="form__section-title">見学に関する詳細</h3>
+                                    <div class="form__row--half">
+                                        <div class="form__group">
+                                            <label for="visit-date" class="form__label">希望日時（第1希望）</label>
+                                            <input type="datetime-local" id="visit-date" name="visit_date" class="form__input">
+                                        </div>
+                                        <div class="form__group">
+                                            <label for="visit-date2" class="form__label">希望日時（第2希望）</label>
+                                            <input type="datetime-local" id="visit-date2" name="visit_date2" class="form__input">
+                                        </div>
+                                    </div>
+                                    <div class="form__row">
+                                        <div class="form__group">
+                                            <label for="visit-participants" class="form__label">参加人数</label>
+                                            <select id="visit-participants" name="visit_participants" class="form__select">
+                                                <option value="">選択してください</option>
+                                                <option value="1">1名</option>
+                                                <option value="2">2名</option>
+                                                <option value="3">3名</option>
+                                                <option value="4">4名</option>
+                                                <option value="5+">5名以上</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form__row">
+                                <div class="form__group">
+                                    <label for="message" class="form__label form__label--required">お問い合わせ内容</label>
+                                    <textarea id="message" name="message" class="form__textarea" rows="6" required 
+                                              placeholder="具体的なご質問やご要望をお聞かせください"></textarea>
+                                    <div class="form__error" id="message-error"></div>
+                                </div>
+                            </div>
+
+                            <div class="form__checkbox-group">
+                                <input type="checkbox" id="privacy" name="privacy" class="form__checkbox" required>
+                                <label for="privacy" class="form__checkbox-label">
+                                    <a href="privacy.html" target="_blank">プライバシーポリシー</a>に同意します *
+                                </label>
+                                <div class="form__error" id="privacy-error"></div>
+                            </div>
+
+                            <div class="form__submit">
+                                <button type="submit" class="btn btn--primary btn--large" id="submit-btn">
+                                    送信する
+                                    <span class="btn__icon">📨</span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="contact-form__success" id="success-message" style="display: none;">
+                        <div class="success-content">
+                            <div class="success-content__icon">✅</div>
+                            <h3 class="success-content__title">送信完了</h3>
+                            <p class="success-content__message">
+                                お問い合わせありがとうございます。<br>
+                                24時間以内にご返信いたします。
+                            </p>
+                            <button class="btn btn--outline" onclick="resetForm()">
+                                新しいお問い合わせ
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Direct Contact Information -->
+        <section class="section section--light" aria-labelledby="direct-contact-title">
+            <div class="section__container">
+                <div class="section__header">
+                    <h2 id="direct-contact-title" class="section__title">直接のご連絡先</h2>
+                    <p class="section__subtitle">
+                        お急ぎの場合は直接お電話ください
+                    </p>
+                </div>
+
+                <div class="direct-contact">
+                    <div class="direct-contact__grid">
+                        <div class="direct-contact__method">
+                            <div class="direct-contact__icon">📞</div>
+                            <h3 class="direct-contact__title">お電話でのお問い合わせ</h3>
+                            <div class="direct-contact__info">
+                                <p class="direct-contact__main">
+                                    <a href="tel:03-0000-0000" class="direct-contact__link">03-0000-0000</a>
+                                </p>
+                                <p class="direct-contact__hours">平日 9:00-18:00</p>
+                                <p class="direct-contact__note">土曜日は17:00まで / 日祝休み</p>
+                            </div>
+                            <div class="direct-contact__special">
+                                <h4>求人専用ダイヤル</h4>
+                                <p><a href="tel:0120-000-000" class="direct-contact__link">0120-000-000</a></p>
+                                <p class="direct-contact__hours">平日 9:00-18:00 / 土曜 9:00-15:00</p>
+                            </div>
+                        </div>
+
+                        <div class="direct-contact__method">
+                            <div class="direct-contact__icon">✉️</div>
+                            <h3 class="direct-contact__title">メールでのお問い合わせ</h3>
+                            <div class="direct-contact__info">
+                                <p class="direct-contact__main">
+                                    <strong>一般お問い合わせ</strong><br>
+                                    <a href="mailto:info@solex-logistics.com" class="direct-contact__link">info@solex-logistics.com</a>
+                                </p>
+                                <p class="direct-contact__main">
+                                    <strong>求人・採用関連</strong><br>
+                                    <a href="mailto:recruit@solex-logistics.com" class="direct-contact__link">recruit@solex-logistics.com</a>
+                                </p>
+                                <p class="direct-contact__main">
+                                    <strong>営業・サービス関連</strong><br>
+                                    <a href="mailto:sales@solex-logistics.com" class="direct-contact__link">sales@solex-logistics.com</a>
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="direct-contact__method">
+                            <div class="direct-contact__icon">📠</div>
+                            <h3 class="direct-contact__title">FAX</h3>
+                            <div class="direct-contact__info">
+                                <p class="direct-contact__main">03-0000-0001</p>
+                                <p class="direct-contact__note">24時間受付</p>
+                            </div>
+                        </div>
+
+                        <div class="direct-contact__method">
+                            <div class="direct-contact__icon">📍</div>
+                            <h3 class="direct-contact__title">所在地</h3>
+                            <div class="direct-contact__info">
+                                <p class="direct-contact__address">
+                                    〒000-0000<br>
+                                    東京都○○区○○町1-2-3<br>
+                                    SOLEXビル 2F
+                                </p>
+                                <p class="direct-contact__access">
+                                    <strong>最寄り駅</strong><br>
+                                    JR○○線「○○駅」徒歩5分<br>
+                                    地下鉄○○線「○○駅」徒歩3分
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ Section -->
+        <section class="section section--gray" aria-labelledby="faq-title">
+            <div class="section__container">
+                <div class="section__header">
+                    <h2 id="faq-title" class="section__title">よくあるご質問</h2>
+                    <p class="section__subtitle">
+                        お問い合わせの前にご確認ください
+                    </p>
+                </div>
+
+                <div class="faq">
+                    <div class="faq__categories">
+                        <button class="faq__category-btn faq__category-btn--active" data-category="recruit">
+                            求人関連
+                        </button>
+                        <button class="faq__category-btn" data-category="service">
+                            サービス関連
+                        </button>
+                        <button class="faq__category-btn" data-category="company">
+                            会社情報
+                        </button>
+                    </div>
+
+                    <!-- Recruit FAQ -->
+                    <div class="faq__content faq__content--active" id="faq-recruit">
+                        <div class="faq__items">
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">未経験でも応募できますか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>はい、未経験の方も大歓迎です。充実した研修制度があり、座学から実技まで段階的に学べます。現在活躍中の女性ドライバーの多くが未経験からスタートしています。</p>
+                                </div>
+                            </div>
+
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">女性でも大型車両の運転はできますか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>もちろんできます。性別に関係なく、適切な研修を受ければ安全に運転できます。パワーステアリングやエアブレーキなど、運転を補助する装置も充実しており、女性ドライバーも多数活躍しています。</p>
+                                </div>
+                            </div>
+
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">子育てとの両立は可能ですか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>両立支援に力を入れています。時短勤務、フレックスタイム、急な早退・欠勤への理解など、働きやすい環境を整えています。育児休暇制度や子の看護休暇制度も完備しています。</p>
+                                </div>
+                            </div>
+
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">どのような免許が必要ですか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>軽貨物ドライバーは普通免許（AT限定可）、一般貨物ドライバーは中型免許以上が必要です。ただし、免許取得支援制度があるため、普通免許をお持ちの方でも中型・大型免許の取得をサポートいたします。</p>
+                                </div>
+                            </div>
+
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">職場見学はできますか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>はい、職場見学を歓迎しています。実際の職場環境、女性専用設備、車両などをご覧いただけます。事前にご予約いただければ、平日・土曜日に対応いたします。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Service FAQ -->
+                    <div class="faq__content" id="faq-service">
+                        <div class="faq__items">
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">配送エリアはどこまでですか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>関東圏を中心に全国への配送に対応しています。軽貨物は都市部中心、一般貨物は長距離輸送も可能です。詳細なエリアについてはお問い合わせください。</p>
+                                </div>
+                            </div>
+
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">即日配送は可能ですか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>軽貨物運送では即日配送に対応しています。お急ぎの荷物がございましたら、まずはお電話でご相談ください。時間や場所によって対応可能かお答えいたします。</p>
+                                </div>
+                            </div>
+
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">料金はどのように決まりますか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>距離、重量、貨物の種類、緊急度などを総合的に判断して料金を決定します。定期便の場合は割引価格もご用意しています。詳細な見積もりは無料で承っております。</p>
+                                </div>
+                            </div>
+
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">どのような荷物を運べますか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>機械設備、建材、日用品、食品など幅広い貨物に対応しています。ただし、危険物や特殊な温度管理が必要な荷物については事前にご相談ください。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Company FAQ -->
+                    <div class="faq__content" id="faq-company">
+                        <div class="faq__items">
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">会社の設立はいつですか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>1999年4月に設立し、2024年で25周年を迎えました。長年の経験と実績で、お客様に信頼される物流サービスを提供しています。</p>
+                                </div>
+                            </div>
+
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">社名変更の理由は何ですか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>2024年4月に「株式会社SOLEX」から「株式会社SOLEX LOGISTICS」に変更しました。物流事業への特化と専門性の明確化、さらなるサービス向上を目指すためです。</p>
+                                </div>
+                            </div>
+
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">車両台数はどのくらいですか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>大型トラック8台、中型トラック12台、軽貨物車両25台の計45台を保有しています。すべて定期点検・整備を徹底し、安全性を確保しています。</p>
+                                </div>
+                            </div>
+
+                            <div class="faq__item">
+                                <button class="faq__question" aria-expanded="false">
+                                    <span class="faq__question-text">ISO認証は取得していますか？</span>
+                                    <span class="faq__question-icon">+</span>
+                                </button>
+                                <div class="faq__answer">
+                                    <p>はい、ISO 9001認証を取得しています。品質管理体制を整備し、継続的な改善により高品質なサービスを提供しています。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Access Information -->
+        <section class="section section--light" aria-labelledby="access-title">
+            <div class="section__container">
+                <div class="section__header">
+                    <h2 id="access-title" class="section__title">アクセス情報</h2>
+                    <p class="section__subtitle">
+                        お車・電車でのアクセス方法
+                    </p>
+                </div>
+
+                <div class="access-info">
+                    <div class="access-info__content">
+                        <div class="access-info__details">
+                            <div class="access-info__section">
+                                <h3 class="access-info__section-title">📍 所在地</h3>
+                                <div class="access-info__address">
+                                    <p class="access-info__postal">〒000-0000</p>
+                                    <p class="access-info__location">東京都○○区○○町1-2-3 SOLEXビル 2F</p>
+                                </div>
+                            </div>
+
+                            <div class="access-info__section">
+                                <h3 class="access-info__section-title">🚃 電車でのアクセス</h3>
+                                <div class="access-info__transit">
+                                    <div class="access-info__route">
+                                        <span class="access-info__route-name">JR○○線</span>
+                                        <span class="access-info__station">「○○駅」</span>
+                                        <span class="access-info__time">東口より徒歩5分</span>
+                                    </div>
+                                    <div class="access-info__route">
+                                        <span class="access-info__route-name">地下鉄○○線</span>
+                                        <span class="access-info__station">「○○駅」</span>
+                                        <span class="access-info__time">A3出口より徒歩3分</span>
+                                    </div>
+                                    <div class="access-info__route">
+                                        <span class="access-info__route-name">私鉄○○線</span>
+                                        <span class="access-info__station">「○○駅」</span>
+                                        <span class="access-info__time">南口より徒歩7分</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="access-info__section">
+                                <h3 class="access-info__section-title">🚗 お車でのアクセス</h3>
+                                <div class="access-info__driving">
+                                    <ul class="access-info__route-list">
+                                        <li>首都高速○○線「○○IC」より約10分</li>
+                                        <li>環七通りから○○通り経由</li>
+                                        <li>○○交差点を右折、2つ目の角を左折</li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="access-info__section">
+                                <h3 class="access-info__section-title">🅿️ 駐車場</h3>
+                                <div class="access-info__parking">
+                                    <p><strong>来客用駐車場：</strong>3台まで無料</p>
+                                    <p><strong>駐車時間：</strong>最大2時間まで</p>
+                                    <p><strong>注意事項：</strong>事前に駐車場利用の旨をお知らせください</p>
+                                </div>
+                            </div>
+
+                            <div class="access-info__section">
+                                <h3 class="access-info__section-title">🕐 営業時間</h3>
+                                <div class="access-info__hours">
+                                    <p><strong>平日：</strong>9:00 - 18:00</p>
+                                    <p><strong>土曜：</strong>9:00 - 17:00</p>
+                                    <p><strong>休業日：</strong>日曜・祝日、年末年始</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="access-info__map">
+                            <div class="placeholder placeholder--map" aria-label="SOLEX LOGISTICS所在地の地図">
+                                <div class="map-placeholder">
+                                    <div class="map-placeholder__icon">🗺️</div>
+                                    <div class="map-placeholder__text">
+                                        <h4>アクセスマップ</h4>
+                                        <p>東京都○○区○○町1-2-3<br>SOLEXビル 2F</p>
+                                        <p>最寄り駅：○○駅</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="access-info__map-note">
+                                <p>※詳細な地図は<a href="https://maps.google.com" target="_blank" rel="noopener">Google Maps</a>でご確認ください</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer__container">
+            <div class="footer__content">
+                <div class="footer__section footer__section--company">
+                    <div class="footer__logo">
+                        <div class="placeholder placeholder--logo placeholder--logo-white" aria-label="株式会社SOLEX LOGISTICS"></div>
+                    </div>
+                    <p class="footer__company-description">
+                        25年の信頼と実績を新たな名前で。<br>
+                        お客様の大切な荷物を安全・確実にお届けします。
+                    </p>
+                </div>
+                
+                <div class="footer__section footer__section--nav">
+                    <h3 class="footer__section-title">サイトマップ</h3>
+                    <ul class="footer__nav-list">
+                        <li class="footer__nav-item">
+                            <a href="index.html" class="footer__nav-link">トップページ</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="about.html" class="footer__nav-link">会社案内</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="services.html" class="footer__nav-link">サービス</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="recruit.html" class="footer__nav-link">求人情報</a>
+                        </li>
+                        <li class="footer__nav-item">
+                            <a href="contact.html" class="footer__nav-link">お問い合わせ</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section footer__section--contact">
+                    <h3 class="footer__section-title">お問い合わせ</h3>
+                    <div class="footer__contact-info">
+                        <p class="footer__contact-item">
+                            <span class="footer__contact-label">電話:</span>
+                            <a href="tel:03-0000-0000" class="footer__contact-link">03-0000-0000</a>
+                        </p>
+                        <p class="footer__contact-item">
+                            <span class="footer__contact-label">営業時間:</span>
+                            平日 9:00-18:00
+                        </p>
+                        <p class="footer__contact-item">
+                            <span class="footer__contact-label">メール:</span>
+                            <a href="mailto:info@solex-logistics.com" class="footer__contact-link">info@solex-logistics.com</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">
+                    &copy; 2024 株式会社SOLEX LOGISTICS. All rights reserved.
+                </p>
+                <div class="footer__legal">
+                    <a href="privacy.html" class="footer__legal-link">プライバシーポリシー</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/main.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/contact.js" defer></script>
+</body>
+</html>

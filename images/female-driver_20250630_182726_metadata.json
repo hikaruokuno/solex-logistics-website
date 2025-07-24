@@ -1,0 +1,28 @@
+{
+  "project_name": "solex-logistics",
+  "prompt": "Professional female truck driver, smiling confident woman in work uniform, standing next to blue logistics truck, Japanese workplace diversity, corporate photography style, bright lighting",
+  "timestamp": "20250630_182726",
+  "parameters": {
+    "size": "1024x1536"
+  },
+  "config_used": {
+    "project_name": "solex-logistics",
+    "output_dir": "./images",
+    "filename_prefix": "solex",
+    "default_model": "gpt-image-1",
+    "default_size": "1024x1024",
+    "default_output_format": "png",
+    "default_n": 1,
+    "default_moderation": "auto",
+    "default_quality": "medium"
+  },
+  "files": [
+    "./images/female-driver_20250630_182726_1.png"
+  ],
+  "model": "gpt-image-1",
+  "generation_info": {
+    "size": "1024x1536",
+    "output_format": "png",
+    "n": 1
+  }
+}

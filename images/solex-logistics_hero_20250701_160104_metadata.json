@@ -1,0 +1,26 @@
+{
+  "project_name": "solex-logistics",
+  "prompt": "Modern female truck driver silhouette against blue gradient background. Professional logistics industry theme. Minimalist corporate design with blue (#1E88E5) to orange (#FF8F00) gradient. Female empowerment in transportation industry. Clean, professional, inspiring visual for corporate website hero section.",
+  "timestamp": "20250701_160104",
+  "parameters": {},
+  "config_used": {
+    "project_name": "solex-logistics",
+    "output_dir": "./images",
+    "filename_prefix": "hero",
+    "default_model": "gpt-image-1",
+    "default_size": "1536x1024",
+    "default_output_format": "png",
+    "default_quality": "high",
+    "default_n": 1,
+    "default_moderation": "auto"
+  },
+  "files": [
+    "./images/solex-logistics_hero_20250701_160104_1.png"
+  ],
+  "model": "gpt-image-1",
+  "generation_info": {
+    "size": "1536x1024",
+    "output_format": "png",
+    "n": 1
+  }
+}
