@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="株式会社SOLEX LOGISTICSは25年の信頼と実績を新たな名前で。女性ドライバーも活躍できる運送会社として、一般貨物・軽貨物の配送サービスを提供しています。">
-    <meta name="keywords" content="SOLEX LOGISTICS,運送会社,女性ドライバー,一般貨物,軽貨物,求人,配送,物流">
+    <meta name="description" content="株式会社SOLEX LOGISTICSは25年の信頼と実績を誇る運送会社。プロフェッショナルドライバーが活躍する職場で、一般貨物・軽貨物の配送サービスを提供しています。">
+    <meta name="keywords" content="SOLEX LOGISTICS,運送会社,プロドライバー,一般貨物,軽貨物,求人,配送,物流">
     <title>株式会社SOLEX LOGISTICS - 25年の信頼と実績を新たな名前で</title>
     
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="tailwind.config.js"></script>
+    
+    <!-- 3D Background CSS -->
+    <link rel="stylesheet" href="css/3d-background.css">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,16 +27,421 @@
     <!-- Custom Styles -->
     <style>
         [x-cloak] { display: none !important; }
+        
+        /* アニメーション定義 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        @keyframes zoomIn {
+            from {
+                opacity: 0;
+                transform: scale(0.8);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        /* ヒーローセクションのパララックス効果 */
+        .hero-parallax {
+            transition: transform 0.3s ease-out;
+        }
+        
+        /* アニメーションクラス */
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out;
+        }
+        
+        .animate-slideInLeft {
+            animation: slideInLeft 0.8s ease-out;
+        }
+        
+        .animate-zoomIn {
+            animation: zoomIn 0.6s ease-out;
+        }
+        
+        .animate-pulse {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        /* 遅延クラス */
+        .delay-100 { animation-delay: 0.1s; }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-300 { animation-delay: 0.3s; }
+        .delay-400 { animation-delay: 0.4s; }
+        
+        /* スクロールアニメーション用 */
+        .scroll-animate {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .scroll-animate.show {
+            opacity: 1;
+        }
+        
+        .scroll-animate.fadeInUp {
+            transform: translateY(30px);
+        }
+        
+        .scroll-animate.fadeInUp.show {
+            transform: translateY(0);
+        }
+        
+        /* ホバーエフェクト */
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+        
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        
+        /* グロー効果 */
+        .glow {
+            box-shadow: 0 0 20px rgba(30, 136, 229, 0.5);
+            transition: box-shadow 0.3s ease;
+        }
+        
+        .glow:hover {
+            box-shadow: 0 0 30px rgba(30, 136, 229, 0.8);
+        }
+        
+        /* ヒーロー3D効果 */
+        .hero-3d-container {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .hero-particle {
+            position: absolute;
+            width: 4px;
+            height: 4px;
+            background: rgba(30, 136, 229, 0.8);
+            border-radius: 50%;
+            box-shadow: 0 0 10px rgba(30, 136, 229, 0.8), 0 0 20px rgba(30, 136, 229, 0.4);
+            animation: heroParticleFloat 4s ease-in-out infinite;
+        }
+        
+        @keyframes heroParticleFloat {
+            0%, 100% {
+                transform: translateY(0) translateX(0) scale(1);
+                opacity: 0;
+            }
+            20% {
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-200px) translateX(50px) scale(1.5);
+                opacity: 1;
+            }
+            80% {
+                opacity: 1;
+            }
+        }
+        
+        .hero-cube {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            transform-style: preserve-3d;
+            animation: heroFloat 15s ease-in-out infinite;
+        }
+        
+        .hero-cube-face {
+            position: absolute;
+            width: 60px;
+            height: 60px;
+            border: 2px solid rgba(255, 143, 0, 0.6);
+            background: linear-gradient(135deg, rgba(255, 143, 0, 0.1), rgba(255, 167, 38, 0.05));
+            box-shadow: inset 0 0 20px rgba(255, 143, 0, 0.2);
+        }
+        
+        .hero-cube-face::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 40%;
+            height: 40%;
+            transform: translate(-50%, -50%);
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="rgba(255,143,0,0.3)" stroke-width="1"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>') center/contain no-repeat;
+        }
+        
+        .hero-cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(30px); }
+        .hero-cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(30px); }
+        .hero-cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(30px); }
+        .hero-cube-face:nth-child(4) { transform: rotateY(270deg) translateZ(30px); }
+        .hero-cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(30px); }
+        .hero-cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(30px); }
+        
+        @keyframes heroFloat {
+            0%, 100% {
+                transform: translate3d(0, 0, 0) rotateX(15deg) rotateY(45deg);
+            }
+            25% {
+                transform: translate3d(50px, -30px, 30px) rotateX(30deg) rotateY(135deg);
+            }
+            50% {
+                transform: translate3d(-50px, -50px, -30px) rotateX(45deg) rotateY(225deg);
+            }
+            75% {
+                transform: translate3d(30px, -30px, 50px) rotateX(30deg) rotateY(315deg);
+            }
+        }
+        
+        .hero-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(to right, transparent, rgba(30, 136, 229, 0.6), transparent);
+            animation: heroLineMove 8s ease-in-out infinite;
+        }
+        
+        @keyframes heroLineMove {
+            0%, 100% {
+                transform: translateX(-100%) scaleX(0.5);
+                opacity: 0;
+            }
+            50% {
+                transform: translateX(0) scaleX(1);
+                opacity: 1;
+            }
+        }
+        
+        /* SOLEX LOGISTICS 文字アニメーション */
+        .hero-title {
+            position: relative;
+            display: inline-block;
+        }
+        
+        .hero-title-main {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 0.05em;
+            color: #FFFFFF;
+            text-shadow: 
+                0 0 10px rgba(30, 136, 229, 0.8),
+                0 0 20px rgba(30, 136, 229, 0.6),
+                0 0 30px rgba(30, 136, 229, 0.4),
+                0 0 40px rgba(255, 143, 0, 0.3);
+            margin-bottom: 0.5rem;
+            animation: titleGlow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes titleGlow {
+            from {
+                text-shadow: 
+                    0 0 10px rgba(30, 136, 229, 0.8),
+                    0 0 20px rgba(30, 136, 229, 0.6),
+                    0 0 30px rgba(30, 136, 229, 0.4),
+                    0 0 40px rgba(255, 143, 0, 0.3);
+            }
+            to {
+                text-shadow: 
+                    0 0 20px rgba(30, 136, 229, 1),
+                    0 0 30px rgba(30, 136, 229, 0.8),
+                    0 0 40px rgba(30, 136, 229, 0.6),
+                    0 0 50px rgba(255, 143, 0, 0.4);
+            }
+        }
+        
+        @keyframes gradientShift {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+        
+        .hero-subtitle {
+            position: absolute;
+            top: -20px;
+            right: -50px;
+            font-size: 0.8rem;
+            color: #FF8F00;
+            font-weight: bold;
+            transform: rotate(-10deg);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        /* 文字が一文字ずつ現れるアニメーション */
+        .letter-animation {
+            display: inline-block;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: letterAppear 0.5s ease forwards;
+            color: inherit;
+            text-shadow: inherit;
+        }
+        
+        @keyframes letterAppear {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        /* ネオン効果 */
+        .neon-text {
+            font-size: 2.5rem;
+            color: #fff;
+            text-shadow: 
+                0 0 5px #1E88E5,
+                0 0 10px #1E88E5,
+                0 0 15px #1E88E5,
+                0 0 20px #1E88E5,
+                0 0 35px #1E88E5,
+                0 0 40px #1E88E5;
+            animation: neonFlicker 2s infinite alternate;
+        }
+        
+        @keyframes neonFlicker {
+            0%, 100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.8;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-title-main {
+                font-size: 2.2rem;
+                letter-spacing: 0.02em;
+                line-height: 1.2;
+            }
+            .neon-text {
+                font-size: 1.8rem;
+            }
+            .hero-subtitle {
+                font-size: 0.7rem;
+                top: -12px;
+                right: -20px;
+                transform: rotate(-8deg);
+            }
+            .hero-title {
+                margin-bottom: 1rem;
+                padding: 0 10px;
+            }
+            /* モバイルメニューボタンのサイズ調整 */
+            .mobile-menu-btn {
+                padding: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-title-main {
+                font-size: 1.9rem;
+                letter-spacing: 0.01em;
+            }
+            .hero-subtitle {
+                right: -15px;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .hero-title-main {
+                font-size: 1.7rem;
+                letter-spacing: 0;
+            }
+        }
     </style>
 </head>
 <body class="font-sans text-text-gray">
+    <!-- 3D Background -->
+    <div class="three-d-background">
+        <div class="grid-floor"></div>
+        <div class="cube-container">
+            <div class="cube">
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+            </div>
+            <div class="cube">
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+                <div class="cube-face"></div>
+            </div>
+        </div>
+        <div class="three-d-overlay"></div>
+    </div>
     <!-- Header -->
     <header class="fixed top-0 w-full bg-white shadow-md z-50">
         <div class="container mx-auto px-4">
-            <nav class="flex items-center justify-between h-20">
+            <nav class="flex items-center justify-between h-14 md:h-16">
                 <!-- Logo -->
                 <div class="flex items-center">
-                    <img src="images/logo/logo_temp.png" alt="SOLEX LOGISTICS" class="h-12 md:h-16">
+                    <img src="images/logo/logo_temp.png" alt="SOLEX LOGISTICS" class="h-8 md:h-12">
                 </div>
                 
                 <!-- Desktop Navigation -->
@@ -67,24 +475,72 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center mt-20">
+    <section class="relative h-screen flex items-center justify-center mt-14 md:mt-16 z-10">
         <div class="absolute inset-0 bg-gradient-to-br from-dark-blue to-primary-blue opacity-90"></div>
-        <img src="images/solex-logistics_hero_20250701_162253_1.png" alt="SOLEX LOGISTICS トラック" class="absolute inset-0 w-full h-full object-cover">
+        <!-- ヒーロー動画 -->
+        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover" style="filter: brightness(0.6);">
+            <source src="images/top_movie.mp4" type="video/mp4">
+            <!-- フォールバック画像（動画が再生できない場合） -->
+            <img src="images/top_pc.png" alt="SOLEX LOGISTICS トラック" class="hidden md:block w-full h-full object-cover">
+            <img src="images/top_sp.png" alt="SOLEX LOGISTICS トラック" class="md:hidden w-full h-full object-cover">
+        </video>
+        
+        <!-- Hero 3D Effects -->
+        <div class="hero-3d-container">
+            <!-- Floating Boxes (Package Style) -->
+            <div class="hero-cube" style="top: 10%; left: 5%;">
+                <div class="hero-cube-face"></div>
+                <div class="hero-cube-face"></div>
+                <div class="hero-cube-face"></div>
+                <div class="hero-cube-face"></div>
+                <div class="hero-cube-face"></div>
+                <div class="hero-cube-face"></div>
+            </div>
+            <div class="hero-cube" style="top: 70%; right: 10%; animation-delay: -5s;">
+                <div class="hero-cube-face"></div>
+                <div class="hero-cube-face"></div>
+                <div class="hero-cube-face"></div>
+                <div class="hero-cube-face"></div>
+                <div class="hero-cube-face"></div>
+                <div class="hero-cube-face"></div>
+            </div>
+            <div class="hero-cube" style="top: 40%; right: 5%; animation-delay: -10s; width: 50px; height: 50px;">
+                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateY(0deg) translateZ(25px);"></div>
+                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateY(90deg) translateZ(25px);"></div>
+                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateY(180deg) translateZ(25px);"></div>
+                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateY(270deg) translateZ(25px);"></div>
+                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateX(90deg) translateZ(25px);"></div>
+                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateX(-90deg) translateZ(25px);"></div>
+            </div>
+            
+            <!-- Moving Lines -->
+            <div class="hero-line" style="top: 20%; width: 300px; animation-delay: 0s;"></div>
+            <div class="hero-line" style="top: 40%; width: 400px; animation-delay: 2s;"></div>
+            <div class="hero-line" style="top: 60%; width: 350px; animation-delay: 4s;"></div>
+            <div class="hero-line" style="top: 80%; width: 450px; animation-delay: 6s;"></div>
+        </div>
         
         <div class="relative z-10 text-center text-white px-4">
-            <h1 class="text-4xl md:text-6xl font-bold mb-6">
-                25年の信頼と実績を<br>
-                新たな名前で
-            </h1>
-            <p class="text-lg md:text-2xl mb-8">
-                株式会社SOLEX → 株式会社SOLEX LOGISTICS
+            <!-- SOLEX LOGISTICS アニメーションタイトル -->
+            <div class="hero-title mb-4">
+                <div class="hero-title-main" id="animatedTitle">SOLEX LOGISTICS</div>
+                <span class="hero-subtitle">Since 1999</span>
+            </div>
+            
+            <h2 class="text-2xl md:text-4xl font-bold mb-6 animate-fadeInUp delay-300">
+                物流の最前線で、<br>
+                未来を運ぶ
+            </h2>
+            
+            <p class="text-lg md:text-2xl mb-8 animate-fadeInUp delay-400">
+                25年の実績が、あなたのキャリアを支える
             </p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="about.html" class="bg-accent-orange hover:bg-light-orange text-white px-8 py-4 rounded-full font-bold transition-colors">
+                <a href="about.html" class="bg-accent-orange hover:bg-light-orange text-white px-8 py-4 rounded-full font-bold transition-colors hover-scale animate-zoomIn delay-500 glow">
                     社名変更について
                 </a>
-                <a href="recruit.html" class="bg-white text-primary-blue hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition-colors">
-                    女性ドライバー募集中
+                <a href="recruit.html" class="bg-white text-primary-blue hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition-colors hover-scale animate-zoomIn delay-600">
+                    ドライバー募集中
                 </a>
             </div>
         </div>
@@ -94,7 +550,7 @@
     <section class="py-20 bg-light-gray">
         <div class="container mx-auto px-4">
             <div class="max-w-4xl mx-auto text-center">
-                <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg">
+                <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg scroll-animate fadeInUp">
                     <h2 class="text-3xl md:text-4xl font-bold text-dark-blue mb-6">
                         社名変更のお知らせ
                     </h2>
@@ -129,7 +585,7 @@
             </h2>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Feature 1 -->
-                <div class="text-center">
+                <div class="text-center scroll-animate fadeInUp delay-100">
                     <div class="w-20 h-20 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
@@ -140,18 +596,18 @@
                 </div>
                 
                 <!-- Feature 2 -->
-                <div class="text-center">
+                <div class="text-center scroll-animate fadeInUp delay-200">
                     <div class="w-20 h-20 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">女性が活躍できる職場</h3>
-                    <p>女性ドライバーも働きやすい環境づくりに注力</p>
+                    <h3 class="text-xl font-bold mb-2">プロフェッショナルが集う職場</h3>
+                    <p>全てのドライバーが活躍できる環境づくり</p>
                 </div>
                 
                 <!-- Feature 3 -->
-                <div class="text-center">
+                <div class="text-center scroll-animate fadeInUp delay-300">
                     <div class="w-20 h-20 bg-secondary-blue rounded-full flex items-center justify-center mx-auto mb-4">
                         <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
@@ -165,14 +621,14 @@
     </section>
 
     <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-primary-blue to-secondary-blue text-white">
+    <section class="py-20 bg-gradient-to-r from-dark-blue to-primary-blue text-white">
         <div class="container mx-auto px-4 text-center">
             <h2 class="text-3xl md:text-4xl font-bold mb-8">
-                女性ドライバー積極採用中！
+                プロフェッショナルドライバー募集中！
             </h2>
             <p class="text-lg mb-8 max-w-2xl mx-auto">
-                SOLEX LOGISTICSでは、女性が安心して働ける環境を整備。<br>
-                未経験者も大歓迎！充実した研修制度でサポートします。
+                最新設備と充実した研修制度で、<br>
+                あなたのプロフェッショナルへの道をサポート。
             </p>
             <a href="recruit.html" class="inline-block bg-white text-primary-blue hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition-colors">
                 求人情報を見る
@@ -199,7 +655,7 @@
                 <div>
                     <h3 class="font-bold mb-4">採用情報</h3>
                     <ul class="text-sm space-y-2">
-                        <li><a href="recruit.html" class="hover:text-light-orange">女性ドライバー募集</a></li>
+                        <li><a href="recruit.html" class="hover:text-light-orange">ドライバー募集</a></li>
                         <li><a href="recruit.html#benefits" class="hover:text-light-orange">福利厚生</a></li>
                     </ul>
                 </div>
@@ -222,6 +678,106 @@
             const menu = document.getElementById('mobileMenu');
             menu.classList.toggle('hidden');
         }
+        
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, observerOptions);
+        
+        // スクロールアニメーション対象要素を監視
+        document.addEventListener('DOMContentLoaded', () => {
+            const scrollElements = document.querySelectorAll('.scroll-animate');
+            scrollElements.forEach(el => observer.observe(el));
+        });
+        
+        // パララックス効果（PCのみ）- 動画には適用しない
+        // 動画の場合は自然な動きがあるため、パララックス効果は不要
+        
+        // パーティクル生成
+        function createParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.animationDelay = Math.random() * 10 + 's';
+            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
+            document.querySelector('.three-d-background').appendChild(particle);
+            
+            // アニメーション終了後に削除
+            setTimeout(() => {
+                particle.remove();
+            }, 20000);
+        }
+        
+        // 定期的にパーティクルを生成
+        setInterval(createParticle, 1000);
+        
+        // 初期パーティクル
+        for (let i = 0; i < 20; i++) {
+            setTimeout(createParticle, i * 500);
+        }
+        
+        // ヒーローパーティクル生成（青い光）
+        function createHeroParticle() {
+            const particle = document.createElement('div');
+            particle.className = 'hero-particle';
+            particle.style.left = Math.random() * 100 + '%';
+            particle.style.bottom = '0';
+            particle.style.animationDelay = Math.random() * 4 + 's';
+            particle.style.animationDuration = (4 + Math.random() * 2) + 's';
+            document.querySelector('.hero-3d-container').appendChild(particle);
+            
+            setTimeout(() => {
+                particle.remove();
+            }, 6000);
+        }
+        
+        // ヒーローパーティクルを定期的に生成
+        setInterval(createHeroParticle, 800);
+        
+        // 初期ヒーローパーティクル
+        for (let i = 0; i < 8; i++) {
+            setTimeout(createHeroParticle, i * 500);
+        }
+        
+        // SOLEX LOGISTICS 文字アニメーション
+        document.addEventListener('DOMContentLoaded', () => {
+            const title = document.getElementById('animatedTitle');
+            if (!title) return;
+            
+            // 親要素のスタイルを保存
+            const computedStyle = window.getComputedStyle(title);
+            const originalBackground = computedStyle.background;
+            
+            const text = title.textContent;
+            title.textContent = '';
+            title.style.display = 'inline-block';
+            
+            // 文字を一文字ずつ分割
+            text.split('').forEach((letter, index) => {
+                const span = document.createElement('span');
+                span.textContent = letter === ' ' ? '\u00A0' : letter; // スペースを保持
+                span.className = 'letter-animation';
+                span.style.animationDelay = `${index * 0.05}s`;
+                span.style.display = 'inline-block';
+                // 各文字にも同じスタイルを適用
+                span.style.fontWeight = '900';
+                span.style.fontSize = 'inherit';
+                span.style.letterSpacing = 'inherit';
+                title.appendChild(span);
+            });
+            
+            // 親要素に背景を再適用
+            title.style.background = originalBackground;
+        });
     </script>
 </body>
 </html>
