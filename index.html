@@ -1,783 +1,1544 @@
 <!DOCTYPE html>
 <html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="株式会社SOLEX LOGISTICSは25年の信頼と実績を誇る運送会社。プロフェッショナルドライバーが活躍する職場で、一般貨物・軽貨物の配送サービスを提供しています。">
-    <meta name="keywords" content="SOLEX LOGISTICS,運送会社,プロドライバー,一般貨物,軽貨物,求人,配送,物流">
-    <title>株式会社SOLEX LOGISTICS - 25年の信頼と実績を新たな名前で</title>
-    
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <script src="tailwind.config.js"></script>
-    
-    <!-- 3D Background CSS -->
-    <link rel="stylesheet" href="css/3d-background.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-    <meta name="theme-color" content="#1E88E5">
-    
-    <!-- Custom Styles -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>株式会社SOLEX LOGISTICS｜一般・軽貨物運送</title>
+    <meta
+      name="description"
+      content="25年の実績で全国物流を支える株式会社SOLEX LOGISTICS。一般貨物・軽貨物運送で迅速かつ安全なサービスを提供します。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="株式会社SOLEX LOGISTICS｜一般・軽貨物運送" />
+    <meta
+      property="og:description"
+      content="25年の実績で全国物流を支える株式会社SOLEX LOGISTICS。一般貨物・軽貨物運送で迅速かつ安全なサービスを提供します。"
+    />
+    <meta property="og:image" content="/assets/images/hero.jpg" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-blue': '#0D4D8B',
+              'brand-sky': '#1DA0E6',
+              'brand-ink': '#102437',
+              'base-cloud': '#F4F7FB',
+              'line-ice': '#D4DFEB'
+            },
+            fontFamily: {
+              sans: ['"Noto Sans JP"', 'system-ui', 'sans-serif'],
+              serif: ['"Noto Serif JP"', 'serif']
+            },
+            letterSpacing: {
+              'wide-en': '0.2em',
+              'hero-ja': '0.08em'
+            },
+            borderRadius: {
+              card: '0.5rem',
+              ribbon: '2.5rem'
+            },
+            boxShadow: {
+              card: '0 22px 48px rgba(16, 24, 32, 0.12)'
+            },
+            maxWidth: {
+              site: '1080px'
+            },
+            keyframes: {
+              'ribbon-drift': {
+                '0%': { transform: 'translate3d(0, 0, 0) rotate(-8deg)' },
+                '100%': { transform: 'translate3d(8px, -10px, 0) rotate(-6deg)' }
+              },
+              'ink-underline': {
+                '0%': { transform: 'scaleX(0)' },
+                '100%': { transform: 'scaleX(1)' }
+              }
+            },
+            animation: {
+              'ribbon-drift': 'ribbon-drift 18s ease-in-out infinite alternate',
+              'ink-underline': 'ink-underline 0.48s ease forwards'
+            }
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com/3.4.4?plugins=forms,typography"></script>
     <style>
-        [x-cloak] { display: none !important; }
-        
-        /* アニメーション定義 */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+      @property --ribbon-entry {
+        syntax: '<length-percentage>';
+        inherits: false;
+        initial-value: 0%;
+      }
+
+      :root {
+        color-scheme: light;
+      }
+
+      body {
+        background-color: #f4f7fb;
+        color: #102437;
+      }
+      #main {
+        position: relative;
+        isolation: isolate;
+        z-index: 0;
+      }
+
+      .nav-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        padding-bottom: 0.35rem;
+        transition: color 0.2s ease;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        background: currentColor;
+        opacity: 0.65;
+        transition: transform 0.25s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      .header-cta {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+      }
+
+      .header-cta::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(29, 160, 230, 0.28), transparent 55%);
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        z-index: -1;
+      }
+
+      .header-cta:hover::before,
+      .header-cta:focus-visible::before {
+        opacity: 1;
+      }
+
+      .mobile-menu-backdrop {
+        backdrop-filter: blur(18px);
+        background: rgba(255, 255, 255, 0.92);
+      }
+
+      .hero-section {
+        position: relative;
+        overflow: hidden;
+        background: #f4f7fb;
+      }
+
+      .hero-ribbon {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        mix-blend-mode: multiply;
+        opacity: 0;
+        --ribbon-entry: 32%;
+        transform: translate3d(var(--ribbon-x), var(--ribbon-y), 0) translateX(var(--ribbon-entry));
+        animation: ribbon-reveal 1.1s ease-out forwards;
+      }
+
+      .hero-ribbon--primary {
+        top: -12%;
+        left: -18%;
+        width: 160%;
+        height: 70%;
+        background: linear-gradient(110deg, rgba(13, 77, 139, 0.92), rgba(29, 160, 230, 0.55));
+        clip-path: polygon(0 28%, 100% 0, 100% 45%, 0 68%);
+        --ribbon-x: 0px;
+        --ribbon-y: 0px;
+      }
+
+      .hero-ribbon--secondary {
+        bottom: -26%;
+        right: -12%;
+        width: 150%;
+        height: 75%;
+        background: linear-gradient(130deg, rgba(29, 160, 230, 0.26), rgba(212, 223, 235, 0.9));
+        clip-path: polygon(0 42%, 100% 20%, 100% 72%, 0 94%);
+        --ribbon-x: 0px;
+        --ribbon-y: 0px;
+        animation-delay: 0.22s;
+      }
+
+      .page-ribbons {
+        position: absolute;
+        top: clamp(-120px, -10vw, -40px);
+        left: -18%;
+        right: -18%;
+        bottom: clamp(220px, 24vw, 360px);
+        pointer-events: none;
+        z-index: -1;
+        overflow: hidden;
+      }
+
+      .page-ribbon {
+        position: absolute;
+        mix-blend-mode: multiply;
+        pointer-events: none;
+        transform: translate3d(0, 0, 0);
+      }
+
+      .page-ribbon--primary {
+        top: 0;
+        left: 0;
+        width: 160%;
+        height: 140%;
+        background: linear-gradient(112deg, rgba(13, 77, 139, 0.8), rgba(29, 160, 230, 0.38));
+        clip-path: polygon(0 18%, 100% 0, 100% 78%, 0 100%);
+        opacity: 0.55;
+      }
+
+      .page-ribbon--secondary {
+        bottom: -24%;
+        right: -8%;
+        width: 140%;
+        height: 125%;
+        background: linear-gradient(132deg, rgba(29, 160, 230, 0.22), rgba(212, 223, 235, 0.88));
+        clip-path: polygon(0 30%, 100% 12%, 100% 84%, 0 98%);
+        opacity: 0.45;
+      }
+
+      @media (max-width: 768px) {
+        .page-ribbons {
+          left: -26%;
+          right: -26%;
+          bottom: clamp(180px, 38vw, 300px);
         }
-        
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-50px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+
+        .page-ribbon--primary {
+          height: 150%;
         }
-        
-        @keyframes zoomIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+      }
+
+      .hero-noise {
+        position: absolute;
+        inset: 0;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="160" height="160" filter="url(%23n)" opacity="0.18"/%3E%3C/svg%3E');
+        mix-blend-mode: multiply;
+        opacity: 0.32;
+        pointer-events: none;
+      }
+
+      .site-footer {
+        background: linear-gradient(160deg, #102437 0%, #0d1d33 58%);
+        color: #f7fbff;
+      }
+
+      .site-footer a {
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .site-footer a:hover,
+      .site-footer a:focus-visible {
+        color: #1da0e6;
+      }
+
+      .site-footer .footer-muted {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .site-footer .footer-label {
+        color: rgba(255, 255, 255, 0.54);
+      }
+
+      .site-footer .footer-legal {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .site-footer .footer-copy {
+        color: rgba(255, 255, 255, 0.42);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .hero-ribbon {
+          --ribbon-entry: 0%;
+          transform: translate3d(0, 0, 0);
+          opacity: 1 !important;
+          animation: none !important;
         }
-        
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
+      }
+      @keyframes ribbon-reveal {
+        0% {
+          --ribbon-entry: 32%;
+          opacity: 0;
         }
-        
-        /* ヒーローセクションのパララックス効果 */
-        .hero-parallax {
-            transition: transform 0.3s ease-out;
+        100% {
+          --ribbon-entry: 0%;
+          opacity: 1;
         }
-        
-        /* アニメーションクラス */
-        .animate-fadeInUp {
-            animation: fadeInUp 0.8s ease-out;
+      }
+      .hero-card {
+        position: relative;
+      }
+
+      .hero-card::after {
+        content: '';
+        position: absolute;
+        inset-inline: 12%;
+        bottom: -0.35rem;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(16, 24, 32, 0.45), transparent);
+      }
+
+      .hero-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 0.18em;
+      }
+
+      .hero-primary-cta {
+        background: linear-gradient(135deg, #1da0e6 0%, #0d4d8b 100%);
+        color: #fff;
+        border: none;
+        box-shadow: 0 18px 36px rgba(13, 77, 139, 0.28);
+      }
+
+      .hero-primary-cta:hover,
+      .hero-primary-cta:focus-visible {
+        background: linear-gradient(135deg, #32b2f4 0%, #1160a5 100%);
+        box-shadow: 0 20px 40px rgba(13, 77, 139, 0.32);
+      }
+      .section-divider {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .section-divider .divider-line {
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform 0.6s ease;
+        background: linear-gradient(90deg, rgba(16, 24, 32, 0), rgba(16, 24, 32, 0.28), rgba(16, 24, 32, 0));
+      }
+
+      .section-divider.is-visible .divider-line {
+        transform: scaleX(1);
+      }
+
+      .trust-card,
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .trust-card:hover,
+      .service-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 24px 48px rgba(16, 24, 32, 0.14);
+      }
+
+      .timeline-step {
+        transform: translateX(-12px);
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .timeline-step.is-visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .floating-label-input:focus ~ .floating-label,
+      .floating-label-input:not(:placeholder-shown) ~ .floating-label,
+      .floating-label-input:valid ~ .floating-label {
+        transform: translateY(-0.75rem);
+        font-size: 0.75rem;
+        color: #1da0e6;
+      }
+
+      .floating-label-input:focus ~ .field-indicator,
+      .floating-label-input:valid ~ .field-indicator {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+
+      .field-indicator {
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+      }
+
+      @media (max-width: 1024px) {
+        .hero-diagonal__text {
+          left: -28%;
+          top: clamp(18%, 28vw, 32%);
+          letter-spacing: 0.32em;
         }
-        
-        .animate-slideInLeft {
-            animation: slideInLeft 0.8s ease-out;
+      }
+
+      @media (max-width: 640px) {
+        .hero-diagonal__text {
+          left: -42%;
+          top: clamp(26%, 40vw, 46%);
+          letter-spacing: 0.18em;
         }
-        
-        .animate-zoomIn {
-            animation: zoomIn 0.6s ease-out;
+      }
+
+      .mobile-nav-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 600;
+        color: rgba(16, 24, 32, 0.88);
+        padding-block: 0.5rem;
+      }
+
+      .mobile-nav-link::before {
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 9999px;
+        background: linear-gradient(120deg, rgba(0, 200, 215, 0.8), rgba(10, 160, 188, 0.65));
+      }
+
+      .mobile-menu-backdrop {
+        backdrop-filter: blur(18px);
+        background: rgba(255, 255, 255, 0.92);
+      }
+
+      .section-divider {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .section-divider .divider-line {
+        transform-origin: left;
+        transform: scaleX(0);
+        transition: transform 0.6s ease;
+        background: linear-gradient(90deg, rgba(13, 77, 139, 0), rgba(13, 77, 139, 0.28), rgba(13, 77, 139, 0));
+      }
+
+      .section-divider.is-visible .divider-line {
+        transform: scaleX(1);
+      }
+
+      .trust-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(13, 77, 139, 0.12);
+        box-shadow: 0 14px 38px rgba(13, 77, 139, 0.16);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .trust-card::before {
+        content: '';
+        position: absolute;
+        inset: -1px;
+        background: linear-gradient(135deg, rgba(13, 77, 139, 0.12), transparent 65%);
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.5s ease;
+      }
+
+      .trust-card::after {
+        content: '';
+        position: absolute;
+        left: 1.75rem;
+        bottom: 1.4rem;
+        width: 3rem;
+        height: 3px;
+        border-radius: 9999px;
+        background: rgba(29, 160, 230, 0.45);
+        transition: transform 0.5s ease, opacity 0.5s ease;
+      }
+
+      .trust-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 20px 46px rgba(13, 77, 139, 0.22);
+      }
+
+      .trust-card:hover::before {
+        transform: translate3d(12px, -10px, 0);
+      }
+
+      .trust-card:hover::after {
+        transform: translateX(8px);
+        opacity: 0.85;
+      }
+
+      .trust-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .service-card {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid rgba(13, 77, 139, 0.1);
+        box-shadow: 0 18px 42px rgba(13, 77, 139, 0.17);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+      }
+
+      .service-card::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(circle at top left, rgba(29, 160, 230, 0.22), transparent 60%);
+        transform: translate3d(0, 0, 0);
+        transition: transform 0.5s ease;
+      }
+
+      .service-card::after {
+        content: '';
+        position: absolute;
+        top: 0.75rem;
+        right: 1.5rem;
+        width: 4.5rem;
+        height: 2px;
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.75), rgba(29, 160, 230, 0.4));
+        border-radius: 9999px;
+        opacity: 0.7;
+        transition: transform 0.5s ease, opacity 0.5s ease;
+      }
+
+      .service-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 24px 55px rgba(13, 77, 139, 0.22);
+      }
+
+      .service-card:hover::before {
+        transform: translate3d(10px, -8px, 0);
+      }
+
+      .service-card:hover::after {
+        transform: translateX(8px);
+        opacity: 1;
+      }
+
+      .service-card > * {
+        position: relative;
+        z-index: 1;
+      }
+
+      .trust-collage-cta {
+        position: relative;
+        z-index: 2;
+      }
+
+      .about-pill {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        gap: 1.1rem;
+        padding: 0.85rem 1.9rem;
+        border-radius: 9999px;
+        background: #102437;
+        color: #ffffff;
+        font-weight: 600;
+        letter-spacing: 0.08em;
+        text-decoration: none;
+        box-shadow: 0 14px 32px rgba(16, 24, 32, 0.18);
+        transition: transform 0.25s ease, box-shadow 0.25s ease;
+      }
+
+      .about-pill::before {
+        content: '';
+        position: absolute;
+        inset: -6px -18px;
+        border-radius: 9999px;
+        border: 1px solid rgba(16, 24, 32, 0.28);
+        z-index: -1;
+        transition: transform 0.25s ease, opacity 0.25s ease;
+      }
+
+      .about-pill svg {
+        width: 1.15rem;
+        height: 1.15rem;
+      }
+
+      .about-pill:hover,
+      .about-pill:focus-visible {
+        transform: translateY(-4px);
+        box-shadow: 0 18px 40px rgba(16, 24, 32, 0.22);
+      }
+
+      .about-pill:hover::before,
+      .about-pill:focus-visible::before {
+        transform: translateY(4px);
+        opacity: 0.85;
+      }
+
+      .about-pill:focus-visible {
+        outline: 2px solid rgba(29, 160, 230, 0.7);
+        outline-offset: 4px;
+      }
+
+      .trust-collage {
+        position: relative;
+        isolation: isolate;
+      }
+
+      .trust-collage::before,
+      .trust-collage::after {
+        content: '';
+        position: absolute;
+        left: -18%;
+        right: -18%;
+        border-radius: 3rem;
+        background: linear-gradient(115deg, rgba(29, 160, 230, 0.26), rgba(13, 77, 139, 0.12));
+        z-index: -1;
+      }
+
+      .trust-collage::before {
+        top: clamp(-70px, -10vw, -30px);
+        height: clamp(180px, 50vw, 260px);
+        transform: rotate(-7deg);
+      }
+
+      .trust-collage::after {
+        bottom: clamp(-80px, -9vw, -40px);
+        height: clamp(160px, 45vw, 230px);
+        transform: rotate(6deg);
+      }
+
+      @media (min-width: 640px) {
+        .trust-collage::before,
+        .trust-collage::after {
+          left: -10%;
+          right: -10%;
         }
-        
-        .animate-pulse {
-            animation: pulse 2s ease-in-out infinite;
+      }
+
+      @media (min-width: 1024px) {
+        .trust-collage::before,
+        .trust-collage::after {
+          content: none;
         }
-        
-        /* 遅延クラス */
-        .delay-100 { animation-delay: 0.1s; }
-        .delay-200 { animation-delay: 0.2s; }
-        .delay-300 { animation-delay: 0.3s; }
-        .delay-400 { animation-delay: 0.4s; }
-        
-        /* スクロールアニメーション用 */
-        .scroll-animate {
-            opacity: 0;
-            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+
+      .trust-collage__cluster,
+      .trust-collage__feature {
+        width: min(92vw, 520px);
+        margin-inline: auto;
+      }
+
+      .trust-collage__cluster {
+        display: grid;
+        gap: 1.25rem;
+      }
+
+      .trust-collage__cluster figure {
+        aspect-ratio: 4 / 5;
+      }
+
+      .trust-collage__cluster figure:nth-child(3) {
+        aspect-ratio: 3 / 2;
+        grid-column: 1 / -1;
+      }
+
+      .trust-collage__feature figure {
+        aspect-ratio: 4 / 5;
+      }
+
+      @media (max-width: 767px) {
+        .trust-collage__cluster {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
         }
-        
-        .scroll-animate.show {
-            opacity: 1;
+
+        .trust-collage__cluster figure:nth-child(3) {
+          max-height: 260px;
         }
-        
-        .scroll-animate.fadeInUp {
-            transform: translateY(30px);
+      }
+
+      @media (min-width: 768px) {
+        .trust-collage__cluster {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+          width: min(100%, 540px);
         }
-        
-        .scroll-animate.fadeInUp.show {
-            transform: translateY(0);
+
+        .trust-collage__feature {
+          width: min(80vw, 360px);
         }
-        
-        /* ホバーエフェクト */
-        .hover-scale {
-            transition: transform 0.3s ease;
+      }
+
+      @media (min-width: 1024px) {
+        .trust-collage {
+          gap: 3rem;
         }
-        
-        .hover-scale:hover {
-            transform: scale(1.05);
+
+        .trust-collage__cluster {
+          width: min(55%, 520px);
+          margin: 0;
         }
-        
-        /* グロー効果 */
-        .glow {
-            box-shadow: 0 0 20px rgba(30, 136, 229, 0.5);
-            transition: box-shadow 0.3s ease;
+
+        .trust-collage__feature {
+          width: min(45%, 360px);
+          margin: 0;
         }
-        
-        .glow:hover {
-            box-shadow: 0 0 30px rgba(30, 136, 229, 0.8);
-        }
-        
-        /* ヒーロー3D効果 */
-        .hero-3d-container {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            pointer-events: none;
-        }
-        
-        .hero-particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(30, 136, 229, 0.8);
-            border-radius: 50%;
-            box-shadow: 0 0 10px rgba(30, 136, 229, 0.8), 0 0 20px rgba(30, 136, 229, 0.4);
-            animation: heroParticleFloat 4s ease-in-out infinite;
-        }
-        
-        @keyframes heroParticleFloat {
-            0%, 100% {
-                transform: translateY(0) translateX(0) scale(1);
-                opacity: 0;
-            }
-            20% {
-                opacity: 1;
-            }
-            50% {
-                transform: translateY(-200px) translateX(50px) scale(1.5);
-                opacity: 1;
-            }
-            80% {
-                opacity: 1;
-            }
-        }
-        
-        .hero-cube {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            transform-style: preserve-3d;
-            animation: heroFloat 15s ease-in-out infinite;
-        }
-        
-        .hero-cube-face {
-            position: absolute;
-            width: 60px;
-            height: 60px;
-            border: 2px solid rgba(255, 143, 0, 0.6);
-            background: linear-gradient(135deg, rgba(255, 143, 0, 0.1), rgba(255, 167, 38, 0.05));
-            box-shadow: inset 0 0 20px rgba(255, 143, 0, 0.2);
-        }
-        
-        .hero-cube-face::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 40%;
-            height: 40%;
-            transform: translate(-50%, -50%);
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="rgba(255,143,0,0.3)" stroke-width="1"><path d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4"/></svg>') center/contain no-repeat;
-        }
-        
-        .hero-cube-face:nth-child(1) { transform: rotateY(0deg) translateZ(30px); }
-        .hero-cube-face:nth-child(2) { transform: rotateY(90deg) translateZ(30px); }
-        .hero-cube-face:nth-child(3) { transform: rotateY(180deg) translateZ(30px); }
-        .hero-cube-face:nth-child(4) { transform: rotateY(270deg) translateZ(30px); }
-        .hero-cube-face:nth-child(5) { transform: rotateX(90deg) translateZ(30px); }
-        .hero-cube-face:nth-child(6) { transform: rotateX(-90deg) translateZ(30px); }
-        
-        @keyframes heroFloat {
-            0%, 100% {
-                transform: translate3d(0, 0, 0) rotateX(15deg) rotateY(45deg);
-            }
-            25% {
-                transform: translate3d(50px, -30px, 30px) rotateX(30deg) rotateY(135deg);
-            }
-            50% {
-                transform: translate3d(-50px, -50px, -30px) rotateX(45deg) rotateY(225deg);
-            }
-            75% {
-                transform: translate3d(30px, -30px, 50px) rotateX(30deg) rotateY(315deg);
-            }
-        }
-        
-        .hero-line {
-            position: absolute;
-            height: 1px;
-            background: linear-gradient(to right, transparent, rgba(30, 136, 229, 0.6), transparent);
-            animation: heroLineMove 8s ease-in-out infinite;
-        }
-        
-        @keyframes heroLineMove {
-            0%, 100% {
-                transform: translateX(-100%) scaleX(0.5);
-                opacity: 0;
-            }
-            50% {
-                transform: translateX(0) scaleX(1);
-                opacity: 1;
-            }
-        }
-        
-        /* SOLEX LOGISTICS 文字アニメーション */
-        .hero-title {
-            position: relative;
-            display: inline-block;
-        }
-        
-        .hero-title-main {
-            font-size: 4rem;
-            font-weight: 900;
-            letter-spacing: 0.05em;
-            color: #FFFFFF;
-            text-shadow: 
-                0 0 10px rgba(30, 136, 229, 0.8),
-                0 0 20px rgba(30, 136, 229, 0.6),
-                0 0 30px rgba(30, 136, 229, 0.4),
-                0 0 40px rgba(255, 143, 0, 0.3);
-            margin-bottom: 0.5rem;
-            animation: titleGlow 3s ease-in-out infinite alternate;
-        }
-        
-        @keyframes titleGlow {
-            from {
-                text-shadow: 
-                    0 0 10px rgba(30, 136, 229, 0.8),
-                    0 0 20px rgba(30, 136, 229, 0.6),
-                    0 0 30px rgba(30, 136, 229, 0.4),
-                    0 0 40px rgba(255, 143, 0, 0.3);
-            }
-            to {
-                text-shadow: 
-                    0 0 20px rgba(30, 136, 229, 1),
-                    0 0 30px rgba(30, 136, 229, 0.8),
-                    0 0 40px rgba(30, 136, 229, 0.6),
-                    0 0 50px rgba(255, 143, 0, 0.4);
-            }
-        }
-        
-        @keyframes gradientShift {
-            0% {
-                background-position: 0% 50%;
-            }
-            50% {
-                background-position: 100% 50%;
-            }
-            100% {
-                background-position: 0% 50%;
-            }
-        }
-        
-        .hero-subtitle {
-            position: absolute;
-            top: -20px;
-            right: -50px;
-            font-size: 0.8rem;
-            color: #FF8F00;
-            font-weight: bold;
-            transform: rotate(-10deg);
-            animation: pulse 2s ease-in-out infinite;
-        }
-        
-        /* 文字が一文字ずつ現れるアニメーション */
-        .letter-animation {
-            display: inline-block;
-            opacity: 0;
-            transform: translateY(20px);
-            animation: letterAppear 0.5s ease forwards;
-            color: inherit;
-            text-shadow: inherit;
-        }
-        
-        @keyframes letterAppear {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        /* ネオン効果 */
-        .neon-text {
-            font-size: 2.5rem;
-            color: #fff;
-            text-shadow: 
-                0 0 5px #1E88E5,
-                0 0 10px #1E88E5,
-                0 0 15px #1E88E5,
-                0 0 20px #1E88E5,
-                0 0 35px #1E88E5,
-                0 0 40px #1E88E5;
-            animation: neonFlicker 2s infinite alternate;
-        }
-        
-        @keyframes neonFlicker {
-            0%, 100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.8;
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .hero-title-main {
-                font-size: 2.2rem;
-                letter-spacing: 0.02em;
-                line-height: 1.2;
-            }
-            .neon-text {
-                font-size: 1.8rem;
-            }
-            .hero-subtitle {
-                font-size: 0.7rem;
-                top: -12px;
-                right: -20px;
-                transform: rotate(-8deg);
-            }
-            .hero-title {
-                margin-bottom: 1rem;
-                padding: 0 10px;
-            }
-            /* モバイルメニューボタンのサイズ調整 */
-            .mobile-menu-btn {
-                padding: 0.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-title-main {
-                font-size: 1.9rem;
-                letter-spacing: 0.01em;
-            }
-            .hero-subtitle {
-                right: -15px;
-            }
-        }
-        
-        @media (max-width: 360px) {
-            .hero-title-main {
-                font-size: 1.7rem;
-                letter-spacing: 0;
-            }
-        }
+      }
+
+      [data-animate] {
+        opacity: 0;
+        transform: translateY(16px);
+        transition: opacity 0.6s ease, transform 0.6s ease;
+      }
+
+      [data-animate].is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      [data-animate="scale"].is-visible {
+        transform: translateY(0) scale(1);
+      }
+
+      [data-animate="scale"] {
+        transform: translateY(16px) scale(0.96);
+      }
+
+      [data-animate-line] {
+        opacity: 1;
+        transform: none;
+      }
+
+      .timeline-step {
+        transform: translateX(-12px);
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+      }
+
+      .timeline-step.is-visible {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      .floating-label-input:focus ~ .floating-label,
+      .floating-label-input:not(:placeholder-shown) ~ .floating-label,
+      .floating-label-input:valid ~ .floating-label {
+        transform: translateY(-0.75rem);
+        font-size: 0.75rem;
+        color: #0d4d8b;
+      }
+
+      .floating-label-input:focus ~ .field-indicator,
+      .floating-label-input:valid ~ .field-indicator {
+        transform: scale(1) rotate(0deg);
+        opacity: 1;
+      }
+
+      .field-indicator {
+        transition: transform 0.25s ease, opacity 0.25s ease;
+        transform: scale(0) rotate(-20deg);
+        opacity: 0;
+      }
     </style>
-</head>
-<body class="font-sans text-text-gray">
-    <!-- 3D Background -->
-    <div class="three-d-background">
-        <div class="grid-floor"></div>
-        <div class="cube-container">
-            <div class="cube">
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-            </div>
-            <div class="cube">
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-            </div>
-            <div class="cube">
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-            </div>
-            <div class="cube">
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-            </div>
-            <div class="cube">
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-                <div class="cube-face"></div>
-            </div>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "株式会社SOLEX LOGISTICS",
+        "url": "https://solex-logistics.jp",
+        "logo": "https://solex-logistics.jp/assets/images/logo_image.jpg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+81-3-1234-5678",
+          "contactType": "customer service",
+          "areaServed": "JP",
+          "availableLanguage": "ja"
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "〒130-0000 東京都墨田区〇〇1-2-3",
+          "addressCountry": "JP"
+        }
+      }
+    </script>
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+  <body class="bg-base-cloud font-sans leading-relaxed text-brand-ink antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:shadow-lg"
+    >
+      本文へスキップ
+    </a>
+    <header id="site-header" class="sticky top-0 z-40 border-b border-line-ice/70 bg-white/85 backdrop-blur transition-shadow">
+      <div class="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-6">
+        <a href="#home" class="flex items-center gap-3">
+          <img src="/assets/images/logo_image.jpg" alt="SOLEX LOGISTICS ロゴ" class="h-12 w-auto" />
+          <span class="text-lg font-semibold text-brand-ink uppercase tracking-wide-en">SOLEX LOGISTICS</span>
+        </a>
+        <nav class="hidden items-center gap-8 text-sm font-medium text-brand-ink/75 md:flex">
+          <a href="#home" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">ホーム</a>
+          <a href="#services" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">事業紹介</a>
+          <a href="#company" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">会社情報</a>
+          <a href="#recruit" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">採用</a>
+          <a href="#contact" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">お問い合わせ</a>
+        </nav>
+        <div class="hidden items-center gap-4 md:flex">
+          <a
+            href="#contact"
+            data-glow
+            class="header-cta group inline-flex items-center gap-2 rounded-full border border-brand-ink/60 px-5 py-2.5 text-sm font-semibold text-brand-ink transition-all duration-200 hover:-translate-y-0.5 hover:text-brand-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+          >
+            <span>お問い合わせ</span>
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M5 12h13M13 5l7 7-7 7"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
         </div>
-        <div class="three-d-overlay"></div>
-    </div>
-    <!-- Header -->
-    <header class="fixed top-0 w-full bg-white shadow-md z-50">
-        <div class="container mx-auto px-4">
-            <nav class="flex items-center justify-between h-14 md:h-16">
-                <!-- Logo -->
-                <div class="flex items-center">
-                    <img src="images/logo/logo_temp.png" alt="SOLEX LOGISTICS" class="h-8 md:h-12">
-                </div>
-                
-                <!-- Desktop Navigation -->
-                <ul class="hidden md:flex items-center space-x-8">
-                    <li><a href="#home" class="hover:text-primary-blue transition-colors">ホーム</a></li>
-                    <li><a href="about.html" class="hover:text-primary-blue transition-colors">会社案内</a></li>
-                    <li><a href="services.html" class="hover:text-primary-blue transition-colors">サービス</a></li>
-                    <li><a href="recruit.html" class="hover:text-primary-blue transition-colors">求人情報</a></li>
-                    <li><a href="contact.html" class="hover:text-primary-blue transition-colors">お問い合わせ</a></li>
-                </ul>
-                
-                <!-- Mobile Menu Button -->
-                <button class="md:hidden p-2" onclick="toggleMobileMenu()">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
-                    </svg>
-                </button>
-            </nav>
-            
-            <!-- Mobile Navigation -->
-            <div id="mobileMenu" class="hidden md:hidden pb-4">
-                <ul class="space-y-2">
-                    <li><a href="#home" class="block py-2 hover:text-primary-blue transition-colors">ホーム</a></li>
-                    <li><a href="about.html" class="block py-2 hover:text-primary-blue transition-colors">会社案内</a></li>
-                    <li><a href="services.html" class="block py-2 hover:text-primary-blue transition-colors">サービス</a></li>
-                    <li><a href="recruit.html" class="block py-2 hover:text-primary-blue transition-colors">求人情報</a></li>
-                    <li><a href="contact.html" class="block py-2 hover:text-primary-blue transition-colors">お問い合わせ</a></li>
-                </ul>
-            </div>
+        <button
+          type="button"
+          class="flex h-11 w-11 items-center justify-center rounded-full border border-brand-ink/20 text-brand-ink transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky md:hidden"
+          id="mobile-menu-button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="sr-only">メニューを開く</span>
+          <span class="block h-0.5 w-6 bg-current transition-all" data-line="top"></span>
+          <span class="mt-1.5 block h-0.5 w-6 bg-current transition-all" data-line="middle"></span>
+          <span class="mt-1.5 block h-0.5 w-6 bg-current transition-all" data-line="bottom"></span>
+        </button>
+      </div>
+      <div
+        id="mobile-menu"
+        class="mobile-menu-backdrop fixed inset-x-0 top-0 z-30 hidden min-h-screen px-6 py-8"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div class="flex items-center justify-between">
+          <a href="#home" class="flex items-center gap-3">
+            <img src="/assets/images/logo_image.jpg" alt="SOLEX LOGISTICS ロゴ" class="h-10 w-auto" />
+            <span class="text-lg font-semibold text-brand-ink uppercase tracking-wide-en">SOLEX LOGISTICS</span>
+          </a>
+          <button
+            type="button"
+            class="flex h-11 w-11 items-center justify-center rounded-full border border-brand-ink/20 text-brand-ink transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+            id="mobile-menu-close"
+          >
+            <span class="sr-only">メニューを閉じる</span>
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m6 6 12 12M18 6 6 18" />
+            </svg>
+          </button>
         </div>
+        <div class="mt-10 flex flex-col gap-6 text-lg font-medium text-brand-ink/90">
+          <a href="#home" class="mobile-nav-link">ホーム</a>
+          <a href="#services" class="mobile-nav-link">事業紹介</a>
+          <a href="#company" class="mobile-nav-link">会社情報</a>
+          <a href="#recruit" class="mobile-nav-link">採用</a>
+          <a href="#contact" class="mobile-nav-link">お問い合わせ</a>
+          <a
+            href="#contact"
+            class="mt-4 inline-flex items-center justify-center rounded-full bg-brand-ink px-4 py-2 text-white shadow-lg shadow-brand-ink/20"
+          >
+            お問い合わせ
+          </a>
+        </div>
+      </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="relative h-screen flex items-center justify-center mt-14 md:mt-16 z-10">
-        <div class="absolute inset-0 bg-gradient-to-br from-dark-blue to-primary-blue opacity-90"></div>
-        <!-- ヒーロー動画 -->
-        <video autoplay loop muted playsinline class="absolute inset-0 w-full h-full object-cover" style="filter: brightness(0.6);">
-            <source src="images/top_movie.mp4" type="video/mp4">
-            <!-- フォールバック画像（動画が再生できない場合） -->
-            <img src="images/top_pc.png" alt="SOLEX LOGISTICS トラック" class="hidden md:block w-full h-full object-cover">
-            <img src="images/top_sp.png" alt="SOLEX LOGISTICS トラック" class="md:hidden w-full h-full object-cover">
-        </video>
-        
-        <!-- Hero 3D Effects -->
-        <div class="hero-3d-container">
-            <!-- Floating Boxes (Package Style) -->
-            <div class="hero-cube" style="top: 10%; left: 5%;">
-                <div class="hero-cube-face"></div>
-                <div class="hero-cube-face"></div>
-                <div class="hero-cube-face"></div>
-                <div class="hero-cube-face"></div>
-                <div class="hero-cube-face"></div>
-                <div class="hero-cube-face"></div>
+    <main id="main">
+      <div class="page-ribbons" aria-hidden="true">
+        <div class="page-ribbon page-ribbon--primary"></div>
+        <div class="page-ribbon page-ribbon--secondary"></div>
+      </div>
+      <section id="home" class="hero-section relative scroll-mt-24">
+        <div class="hero-ribbon hero-ribbon--primary" aria-hidden="true"></div>
+        <div class="hero-ribbon hero-ribbon--secondary" aria-hidden="true"></div>
+        <div class="hero-noise" aria-hidden="true"></div>
+        <div class="relative z-10 mx-auto flex min-h-[82vh] w-full max-w-6xl flex-col justify-center gap-12 px-6 py-24 md:flex-row md:items-center md:gap-16">
+          <div class="space-y-8 md:max-w-2xl" data-animate>
+            <span class="hero-pill rounded-full bg-white/80 px-4 py-1 text-[0.7rem] font-semibold text-brand-ink uppercase tracking-[0.26em]">
+              <span class="rounded-full bg-brand-sky px-2 py-0.5 text-[0.65rem] font-semibold text-white">Vision</span>
+              Sustainable Logistics Mission
+            </span>
+            <div class="hero-card inline-flex flex-col gap-4 rounded-card bg-white/75 px-8 py-6 shadow-card backdrop-blur-sm">
+              <h1 class="font-serif text-3xl leading-relaxed tracking-hero-ja text-brand-ink md:text-4xl md:leading-relaxed lg:text-[3.2rem] lg:leading-[1.5]">
+                <span class="block">創業25年目。</span>
+                <span class="block">WORK FOR GOOD</span>
+                <span class="block">――働く力で社会を動かす。</span>
+              </h1>
             </div>
-            <div class="hero-cube" style="top: 70%; right: 10%; animation-delay: -5s;">
-                <div class="hero-cube-face"></div>
-                <div class="hero-cube-face"></div>
-                <div class="hero-cube-face"></div>
-                <div class="hero-cube-face"></div>
-                <div class="hero-cube-face"></div>
-                <div class="hero-cube-face"></div>
-            </div>
-            <div class="hero-cube" style="top: 40%; right: 5%; animation-delay: -10s; width: 50px; height: 50px;">
-                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateY(0deg) translateZ(25px);"></div>
-                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateY(90deg) translateZ(25px);"></div>
-                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateY(180deg) translateZ(25px);"></div>
-                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateY(270deg) translateZ(25px);"></div>
-                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateX(90deg) translateZ(25px);"></div>
-                <div class="hero-cube-face" style="width: 50px; height: 50px; transform: rotateX(-90deg) translateZ(25px);"></div>
-            </div>
-            
-            <!-- Moving Lines -->
-            <div class="hero-line" style="top: 20%; width: 300px; animation-delay: 0s;"></div>
-            <div class="hero-line" style="top: 40%; width: 400px; animation-delay: 2s;"></div>
-            <div class="hero-line" style="top: 60%; width: 350px; animation-delay: 4s;"></div>
-            <div class="hero-line" style="top: 80%; width: 450px; animation-delay: 6s;"></div>
-        </div>
-        
-        <div class="relative z-10 text-center text-white px-4">
-            <!-- SOLEX LOGISTICS アニメーションタイトル -->
-            <div class="hero-title mb-4">
-                <div class="hero-title-main" id="animatedTitle">SOLEX LOGISTICS</div>
-                <span class="hero-subtitle">Since 1999</span>
-            </div>
-            
-            <h2 class="text-2xl md:text-4xl font-bold mb-6 animate-fadeInUp delay-300">
-                物流の最前線で、<br>
-                未来を運ぶ
-            </h2>
-            
-            <p class="text-lg md:text-2xl mb-8 animate-fadeInUp delay-400">
-                25年の実績が、あなたのキャリアを支える
+            <p class="max-w-xl text-base text-brand-ink/70 md:text-lg">
+              物流の現場で培った知見をもとに、迅速で丁寧な輸送を提供。SOLEX LOGISTICS は人と仕事をつなぎ、持続可能な働き方を支えるパートナーです。
             </p>
-            <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                <a href="about.html" class="bg-accent-orange hover:bg-light-orange text-white px-8 py-4 rounded-full font-bold transition-colors hover-scale animate-zoomIn delay-500 glow">
-                    社名変更について
-                </a>
-                <a href="recruit.html" class="bg-white text-primary-blue hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition-colors hover-scale animate-zoomIn delay-600">
-                    ドライバー募集中
-                </a>
+            <div class="flex flex-col gap-4 sm:flex-row">
+              <a
+                href="#contact"
+                data-glow
+                class="header-cta hero-primary-cta inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+              >
+                お問い合わせ
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a
+                href="#recruit"
+                data-glow
+                class="header-cta inline-flex items-center justify-center gap-2 rounded-full border border-brand-ink/40 px-6 py-3 text-sm font-semibold text-brand-ink transition-all duration-200 hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+              >
+                採用情報を見る
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
             </div>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Company Name Change Notice -->
-    <section class="py-20 bg-light-gray">
-        <div class="container mx-auto px-4">
-            <div class="max-w-4xl mx-auto text-center">
-                <div class="bg-white p-8 md:p-12 rounded-lg shadow-lg scroll-animate fadeInUp">
-                    <h2 class="text-3xl md:text-4xl font-bold text-dark-blue mb-6">
-                        社名変更のお知らせ
-                    </h2>
-                    <p class="text-lg mb-8 leading-relaxed">
-                        平素は格別のご高配を賜り、厚く御礼申し上げます。<br>
-                        この度、弊社は創業25年を機に、<br>
-                        <span class="font-bold text-primary-blue">「株式会社SOLEX」</span>から
-                        <span class="font-bold text-accent-orange">「株式会社SOLEX LOGISTICS」</span>へ<br>
-                        社名を変更させていただくことになりました。
-                    </p>
-                    <div class="bg-blue-50 p-6 rounded-lg">
-                        <p class="text-base mb-4">
-                            これまでの歴史と伝統を大切にしながら、<br>
-                            物流業界の変化に対応し、お客様により良いサービスを<br>
-                            提供できるよう、社員一同邁進してまいります。
-                        </p>
-                        <p class="font-bold text-primary-blue">
-                            今後とも変わらぬご愛顧を賜りますよう、<br>
-                            よろしくお願い申し上げます。
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features -->
-    <section class="py-20">
-        <div class="container mx-auto px-4">
-            <h2 class="text-3xl md:text-4xl font-bold text-center text-dark-blue mb-12">
-                SOLEX LOGISTICSの強み
-            </h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Feature 1 -->
-                <div class="text-center scroll-animate fadeInUp delay-100">
-                    <div class="w-20 h-20 bg-primary-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">25年の信頼実績</h3>
-                    <p>創業以来、地域に根ざした確かな物流サービスを提供</p>
-                </div>
-                
-                <!-- Feature 2 -->
-                <div class="text-center scroll-animate fadeInUp delay-200">
-                    <div class="w-20 h-20 bg-accent-orange rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">プロフェッショナルが集う職場</h3>
-                    <p>全てのドライバーが活躍できる環境づくり</p>
-                </div>
-                
-                <!-- Feature 3 -->
-                <div class="text-center scroll-animate fadeInUp delay-300">
-                    <div class="w-20 h-20 bg-secondary-blue rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg class="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-                        </svg>
-                    </div>
-                    <h3 class="text-xl font-bold mb-2">迅速・確実な配送</h3>
-                    <p>一般貨物から軽貨物まで、お客様のニーズに合わせた配送サービス</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="py-20 bg-gradient-to-r from-dark-blue to-primary-blue text-white">
-        <div class="container mx-auto px-4 text-center">
-            <h2 class="text-3xl md:text-4xl font-bold mb-8">
-                プロフェッショナルドライバー募集中！
-            </h2>
-            <p class="text-lg mb-8 max-w-2xl mx-auto">
-                最新設備と充実した研修制度で、<br>
-                あなたのプロフェッショナルへの道をサポート。
-            </p>
-            <a href="recruit.html" class="inline-block bg-white text-primary-blue hover:bg-gray-100 px-8 py-4 rounded-full font-bold transition-colors">
-                求人情報を見る
+      <section id="trust" class="scroll-mt-24 bg-white/95 py-16 sm:py-20">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="trust-collage-cta mb-10 flex justify-center md:justify-end" data-animate>
+            <a
+              href="#company"
+              class="about-pill"
+            >
+              <span>私たちについて</span>
+              <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
             </a>
+          </div>
+          <div class="trust-collage relative mb-16 flex flex-col items-center gap-6 lg:flex-row lg:items-end">
+            <div class="trust-collage__cluster">
+              <figure class="group relative overflow-hidden rounded-[1.75rem] bg-white shadow-card" data-animate>
+                <picture>
+                  <source srcset="/assets/images/car1.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/car1.jpg"
+                    alt="運行管理センターで物流計画を確認するスタッフ"
+                    class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </picture>
+              </figure>
+              <figure class="group relative overflow-hidden rounded-[1.75rem] bg-white shadow-card" data-animate data-animate-delay="100">
+                <picture>
+                  <source srcset="/assets/images/car2.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/car2.jpg"
+                    alt="出発前に車両をチェックするドライバー"
+                    class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </picture>
+              </figure>
+              <figure
+                class="group relative overflow-hidden rounded-[1.75rem] bg-white shadow-card md:col-span-2"
+                data-animate
+                data-animate-delay="200"
+              >
+                <picture>
+                  <source srcset="/assets/images/car3.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/car3.jpg"
+                    alt="都市部の拠点で積み込みを行うスタッフと車両"
+                    class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </picture>
+              </figure>
+            </div>
+            <div class="trust-collage__feature relative" data-animate data-animate-delay="250">
+              <figure class="group relative overflow-hidden rounded-[1.75rem] bg-white shadow-card">
+                <picture>
+                  <source srcset="/assets/images/car4.webp" type="image/webp" />
+                  <img
+                    src="/assets/images/car4.jpg"
+                    alt="夜間に稼働するSOLEX LOGISTICSの車両"
+                    class="h-full w-full object-cover transition duration-700 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </picture>
+              </figure>
+              <div
+                class="pointer-events-none absolute -top-6 -left-10 hidden h-32 w-48 rounded-[3rem] bg-gradient-to-r from-brand-sky/30 to-brand-blue/10 blur-3xl md:block"
+                aria-hidden="true"
+              ></div>
+              <div
+                class="pointer-events-none absolute -bottom-10 right-6 hidden h-32 w-32 rounded-full bg-gradient-to-tr from-brand-blue/20 to-brand-sky/10 blur-2xl md:block"
+                aria-hidden="true"
+              ></div>
+            </div>
+          </div>
+          <div class="section-divider mb-10" data-animate-line>
+            <span class="h-3 w-3 rounded-full bg-brand-sky/70 shadow-[0_0_10px_rgba(29,160,230,0.45)]"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.4em] text-brand-ink/50">Mission</span>
+            <span class="divider-line h-px flex-1"></span>
+          </div>
+          <div class="mx-auto max-w-2xl text-center md:text-left" data-animate>
+            <h2 class="font-serif text-3xl text-brand-ink md:text-[2.25rem]">選ばれ続ける理由</h2>
+            <p class="mt-4 text-base text-brand-ink/70 md:text-lg">
+              25年で培ったネットワークと現場力で、お客様の物流課題をスピーディーに解決します。
+            </p>
+          </div>
+          <div class="mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            <article class="trust-card rounded-card border border-line-ice/60 bg-white/95 p-8 shadow-card" data-animate>
+              <div class="pointer-events-none absolute -top-10 left-4 h-28 w-28 rounded-ribbon bg-brand-sky/15 blur-3xl" aria-hidden="true"></div>
+              <div class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-sky/15 text-brand-blue">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 4v8l4 2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M3 12a9 9 0 1 0 18 0A9 9 0 0 0 3 12Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="relative mt-6 text-xl font-semibold text-brand-ink">創業25年の信頼</h3>
+              <p class="relative mt-4 text-sm leading-relaxed text-brand-ink/70">
+                金融・製造・小売など多様な業界で実績を重ね、安定した品質管理体制を構築しています。
+              </p>
+            </article>
+            <article
+              class="trust-card rounded-card border border-line-ice/60 bg-white/95 p-8 shadow-card"
+              data-animate
+              data-animate-delay="120"
+            >
+              <div class="pointer-events-none absolute -top-10 left-4 h-28 w-28 rounded-ribbon bg-brand-sky/12 blur-3xl" aria-hidden="true"></div>
+              <div class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-sky/15 text-brand-blue">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M12 6v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M6 12h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M3 8h4l2-3h6l2 3h4v12H3z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" />
+                </svg>
+              </div>
+              <h3 class="relative mt-6 text-xl font-semibold text-brand-ink">24時間365日配車</h3>
+              <p class="relative mt-4 text-sm leading-relaxed text-brand-ink/70">
+                深夜・早朝・緊急案件にも専任チームが即応。待機車両をプールし、最短での手配を実現します。
+              </p>
+            </article>
+            <article
+              class="trust-card rounded-card border border-line-ice/60 bg-white/95 p-8 shadow-card"
+              data-animate
+              data-animate-delay="240"
+            >
+              <div class="pointer-events-none absolute -top-10 left-4 h-28 w-28 rounded-ribbon bg-brand-sky/12 blur-3xl" aria-hidden="true"></div>
+              <div class="relative inline-flex h-12 w-12 items-center justify-center rounded-full bg-brand-sky/15 text-brand-blue">
+                <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M21 12a9 9 0 1 1-18 0" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  <path d="M11 5h2v7h-2z" fill="currentColor" />
+                  <path d="m12 12 3 3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                </svg>
+              </div>
+              <h3 class="relative mt-6 text-xl font-semibold text-brand-ink">全国ネットワーク</h3>
+              <p class="relative mt-4 text-sm leading-relaxed text-brand-ink/70">
+                協力会社との連携で北海道から九州まで対応。長距離・広域案件も安定供給します。
+              </p>
+            </article>
+          </div>
         </div>
-    </section>
+      </section>
 
-    <!-- Footer -->
-    <footer class="bg-dark-blue text-white py-12">
-        <div class="container mx-auto px-4">
-            <div class="grid md:grid-cols-4 gap-8">
-                <div>
-                    <h3 class="font-bold mb-4">会社情報</h3>
-                    <p class="text-sm">株式会社SOLEX LOGISTICS<br>
-                    創業25年の信頼と実績</p>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-4">サービス</h3>
-                    <ul class="text-sm space-y-2">
-                        <li><a href="services.html#general" class="hover:text-light-orange">一般貨物輸送</a></li>
-                        <li><a href="services.html#light" class="hover:text-light-orange">軽貨物配送</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-4">採用情報</h3>
-                    <ul class="text-sm space-y-2">
-                        <li><a href="recruit.html" class="hover:text-light-orange">ドライバー募集</a></li>
-                        <li><a href="recruit.html#benefits" class="hover:text-light-orange">福利厚生</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-4">お問い合わせ</h3>
-                    <a href="contact.html" class="inline-block bg-accent-orange hover:bg-light-orange px-6 py-2 rounded text-sm font-bold transition-colors">
-                        お問い合わせフォーム
-                    </a>
-                </div>
+      <section id="announcement" class="scroll-mt-24 bg-base-cloud/90 py-16 sm:py-20">
+        <div class="relative mx-auto max-w-6xl px-6">
+          <div class="pointer-events-none absolute inset-x-0 top-0 h-40 -skew-y-6 bg-brand-sky/10" aria-hidden="true"></div>
+          <div class="relative section-divider mb-10" data-animate-line>
+            <span class="h-3 w-3 rounded-full bg-brand-sky/70 shadow-[0_0_10px_rgba(29,160,230,0.45)]"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.4em] text-brand-ink/50">Rebrand</span>
+            <span class="divider-line h-px flex-1"></span>
+          </div>
+          <div class="relative grid gap-12 lg:grid-cols-[1.1fr_1fr]">
+            <div class="space-y-6" data-animate>
+              <h2 class="font-serif text-3xl text-brand-ink md:text-[2.1rem]">社名変更のお知らせ</h2>
+              <p class="text-base text-brand-ink/70 md:text-lg">
+                株式会社SOLEXは2024年末より「株式会社SOLEX LOGISTICS」へ社名を変更します。物流を通じて人と働き方の可能性を広げるため、ブランドビジョンとサービス体制を刷新しました。
+              </p>
+              <button
+                type="button"
+                data-scroll-target="#company"
+                data-glow
+                class="header-cta inline-flex items-center gap-2 rounded-full border border-brand-ink/40 px-5 py-2 text-sm font-semibold text-brand-ink transition hover:-translate-y-[2px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+              >
+                代表挨拶を読む
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
             </div>
-            <div class="border-t border-blue-800 mt-8 pt-8 text-center text-sm">
-                <p>&copy; 2024 SOLEX LOGISTICS. All rights reserved.</p>
+            <div class="relative border-l border-brand-ink/15 pl-6" data-animate>
+              <ul class="space-y-6">
+                <li class="timeline-step" style="transition-delay: 0ms;">
+                  <div class="flex items-center gap-3">
+                    <span class="inline-flex h-8 min-w-[64px] items-center justify-center rounded-full border border-brand-ink/20 bg-white/80 px-3 text-xs font-semibold text-brand-ink">
+                      1999
+                    </span>
+                    <p class="text-sm font-semibold text-brand-ink">創業 株式会社SOLEX</p>
+                  </div>
+                  <p class="ml-[4.5rem] mt-2 text-sm text-brand-ink/60">関東圏の一般貨物を中心に事業を開始。</p>
+                </li>
+                <li class="timeline-step" style="transition-delay: 140ms;">
+                  <div class="flex items-center gap-3">
+                    <span class="inline-flex h-8 min-w-[64px] items-center justify-center rounded-full border border-brand-ink/20 bg-white/80 px-3 text-xs font-semibold text-brand-ink">
+                      2024
+                    </span>
+                    <p class="text-sm font-semibold text-brand-ink">創業25周年を迎える</p>
+                  </div>
+                  <p class="ml-[4.5rem] mt-2 text-sm text-brand-ink/60">全国対応体制の整備と品質基準の再定義を実施。</p>
+                </li>
+                <li class="timeline-step" style="transition-delay: 260ms;">
+                  <div class="flex items-center gap-3">
+                    <span class="inline-flex h-8 min-w-[64px] items-center justify-center rounded-full border border-brand-sky/50 bg-brand-sky/10 px-3 text-xs font-semibold text-brand-blue">
+                      2024年末
+                    </span>
+                    <p class="text-sm font-semibold text-brand-ink">株式会社SOLEX LOGISTICSへ</p>
+                  </div>
+                  <p class="ml-[4.5rem] mt-2 text-sm text-brand-ink/60">物流課題解決を軸にした新ブランドビジョンを発表。</p>
+                </li>
+              </ul>
             </div>
+          </div>
         </div>
+      </section>
+
+      <section id="services" class="scroll-mt-24 bg-white/95 py-16 sm:py-20">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="section-divider mb-10" data-animate-line>
+            <span class="h-3 w-3 rounded-full bg-brand-sky/70 shadow-[0_0_10px_rgba(29,160,230,0.45)]"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.4em] text-brand-ink/50">Services</span>
+            <span class="divider-line h-px flex-1"></span>
+          </div>
+          <div class="grid gap-8 md:grid-cols-2">
+            <article id="service-general" class="service-card rounded-card border border-line-ice/60 bg-white/90 p-8 shadow-card" data-animate>
+              <span class="inline-flex items-center gap-2 rounded-full bg-brand-sky/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide-en text-brand-blue">
+                一般貨物運送
+              </span>
+              <h3 class="mt-4 text-xl font-semibold text-brand-ink">大型・中型車両での全国輸送</h3>
+              <p class="mt-4 text-sm leading-relaxed text-brand-ink/70">
+                定期便からスポット便までカバー。食品・飲料・メーカー資材などの量産輸送にも対応し、温度管理や時刻指定など細かな要件にも柔軟に応えます。
+              </p>
+              <ul class="mt-6 space-y-2 text-sm text-brand-ink/60">
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-brand-sky"></span>
+                  <span>対応サービス：長距離幹線／共同配送／倉庫連携</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-brand-sky"></span>
+                  <span>強み：危険物取扱・大型案件のプロジェクト管理</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-brand-sky"></span>
+                  <span>主要業種：製造業、リテール、商社</span>
+                </li>
+              </ul>
+              <a
+                href="#contact"
+                data-glow
+                class="header-cta mt-8 inline-flex items-center gap-2 rounded-full bg-brand-ink px-5 py-2 text-sm font-semibold text-white transition hover:-translate-y-[2px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+              >
+                詳細を相談する
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </article>
+            <article
+              id="service-light"
+              class="service-card rounded-card border border-line-ice/60 bg-white/90 p-8 shadow-card"
+              data-animate
+              data-animate-delay="120"
+            >
+              <span class="inline-flex items-center gap-2 rounded-full bg-brand-sky/15 px-3 py-1 text-xs font-semibold uppercase tracking-wide-en text-brand-blue">
+                軽貨物運送
+              </span>
+              <h3 class="mt-4 text-xl font-semibold text-brand-ink">小ロット配送と緊急チャーター</h3>
+              <p class="mt-4 text-sm leading-relaxed text-brand-ink/70">
+                都市部での当日配送や夜間のルート配送など、機動力を活かした輸送を実現。医療・EC 商材など高精度な取り扱いもお任せください。
+              </p>
+              <ul class="mt-6 space-y-2 text-sm text-brand-ink/60">
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-brand-sky"></span>
+                  <span>対応サービス：緊急便／チャーター便／宅配支援</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-brand-sky"></span>
+                  <span>強み：都市部の時間指定・ラストワンマイル対応</span>
+                </li>
+                <li class="flex items-start gap-2">
+                  <span class="mt-1 h-1.5 w-1.5 rounded-full bg-brand-sky"></span>
+                  <span>主要品目：医療機器、精密機器、食品、EC 商材</span>
+                </li>
+              </ul>
+              <a
+                href="#contact"
+                data-glow
+                class="header-cta mt-8 inline-flex items-center gap-2 rounded-full border border-brand-ink/40 px-5 py-2 text-sm font-semibold text-brand-ink transition hover:-translate-y-[2px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+              >
+                詳細を相談する
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="company" class="scroll-mt-24 bg-base-cloud/90 py-16 sm:py-20">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="section-divider mb-10" data-animate-line>
+            <span class="h-3 w-3 rounded-full bg-brand-sky/70 shadow-[0_0_10px_rgba(29,160,230,0.45)]"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.4em] text-brand-ink/50">Company</span>
+            <span class="divider-line h-px flex-1"></span>
+          </div>
+          <div class="grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
+            <blockquote class="rounded-card border-l-4 border-brand-sky bg-white/80 p-6 text-base text-brand-ink/75 shadow-card md:text-lg" data-animate>
+              <p>
+                「物流は人と地域をつなぐインフラです。私たちは25年積み重ねた信頼と現場力を武器に、時代に合わせた最適な輸送のかたちを追求し続けます。SOLEX LOGISTICS という新しい名のもと、お客様と共に次のフィールドへ踏み出します。」
+              </p>
+              <cite class="mt-4 block text-sm font-semibold text-brand-blue">代表取締役社長　山田 太郎</cite>
+            </blockquote>
+            <div class="rounded-card border border-line-ice/60 bg-white/90 p-6 shadow-card" data-animate>
+              <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm text-brand-ink/70">
+                <dt class="font-semibold text-brand-ink">社名</dt>
+                <dd>株式会社SOLEX LOGISTICS（旧：株式会社SOLEX）</dd>
+                <dt class="font-semibold text-brand-ink">所在地</dt>
+                <dd>東京都墨田区〇〇1-2-3</dd>
+                <dt class="font-semibold text-brand-ink">設立</dt>
+                <dd>1999年4月</dd>
+                <dt class="font-semibold text-brand-ink">代表者</dt>
+                <dd>代表取締役社長　山田 太郎</dd>
+                <dt class="font-semibold text-brand-ink">事業内容</dt>
+                <dd>一般貨物運送事業／軽貨物運送事業／物流コンサルティング</dd>
+                <dt class="font-semibold text-brand-ink">保有車両数</dt>
+                <dd>大型・中型：48台／軽貨物：62台</dd>
+                <dt class="font-semibold text-brand-ink">主要取引銀行</dt>
+                <dd>三井住友銀行 押上支店／りそな銀行 錦糸町支店</dd>
+              </dl>
+            </div>
+          </div>
+          <div id="company-history" class="mt-12 grid gap-6 md:grid-cols-3" data-animate>
+            <div class="rounded-card border border-line-ice/60 bg-white/90 p-6 shadow-card">
+              <p class="text-xs font-semibold uppercase tracking-[0.32em] text-brand-ink/50">1999 - 2005</p>
+              <h3 class="mt-2 text-base font-semibold text-brand-ink">地域密着での成長期</h3>
+              <p class="mt-2 text-sm text-brand-ink/60">
+                関東圏の常温配送を中心に事業基盤を確立。協力会社ネットワークを拡充。
+              </p>
+            </div>
+            <div class="rounded-card border border-line-ice/60 bg-white/90 p-6 shadow-card" data-animate-delay="120">
+              <p class="text-xs font-semibold uppercase tracking-[0.32em] text-brand-ink/50">2006 - 2016</p>
+              <h3 class="mt-2 text-base font-semibold text-brand-ink">全国対応体制を構築</h3>
+              <p class="mt-2 text-sm text-brand-ink/60">
+                協力会社連携を強化し、冷凍冷蔵や精密機器輸送などの専門領域を拡大。
+              </p>
+            </div>
+            <div class="rounded-card border border-line-ice/60 bg-white/90 p-6 shadow-card" data-animate-delay="240">
+              <p class="text-xs font-semibold uppercase tracking-[0.32em] text-brand-ink/50">2017 - </p>
+              <h3 class="mt-2 text-base font-semibold text-brand-ink">DXと働き方改革へ</h3>
+              <p class="mt-2 text-sm text-brand-ink/60">
+                業務DXを推進しながら、女性ドライバーや子育て世代が活躍できる環境整備を進行中。
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="recruit" class="scroll-mt-24 bg-white/95 py-16 sm:py-20">
+        <div class="relative mx-auto max-w-6xl px-6">
+          <div class="pointer-events-none absolute inset-x-0 top-1/3 h-2/3 -skew-y-3 bg-brand-sky/10" aria-hidden="true"></div>
+          <div class="relative section-divider mb-10" data-animate-line>
+            <span class="h-3 w-3 rounded-full bg-brand-sky/70 shadow-[0_0_10px_rgba(29,160,230,0.45)]"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.4em] text-brand-ink/50">Recruit</span>
+            <span class="divider-line h-px flex-1"></span>
+          </div>
+          <div class="relative space-y-8" data-animate>
+            <div class="max-w-3xl space-y-6">
+              <span class="inline-flex items-center gap-2 rounded-full bg-brand-sky/15 px-3 py-1 text-xs font-semibold text-brand-blue uppercase tracking-wide-en">
+                採用情報
+              </span>
+              <h2 class="font-serif text-3xl text-brand-ink md:text-[2.1rem]">柔軟な働き方で女性も活躍中</h2>
+              <p class="text-base text-brand-ink/70 md:text-lg">
+                経験者・未経験者ともに歓迎。多様なシフトに対応し、子育て世代や女性ドライバーも活躍中です。研修制度と安全サポートで長期的に働ける環境を整えています。
+              </p>
+            </div>
+            <div class="grid gap-4 sm:grid-cols-3">
+              <div id="recruit-positions" class="rounded-card border border-line-ice/60 bg-white/90 px-4 py-6 text-sm text-brand-ink/70">
+                <span class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-sky/15 text-xs font-semibold text-brand-blue">01</span>
+                <p class="font-semibold text-brand-ink">募集職種</p>
+                <p class="mt-2">ドライバー（大型・中型・軽貨物）／配車オペレーター／倉庫スタッフ。</p>
+              </div>
+              <div id="recruit-workstyle" class="rounded-card border border-line-ice/60 bg-white/90 px-4 py-6 text-sm text-brand-ink/70">
+                <span class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-sky/15 text-xs font-semibold text-brand-blue">02</span>
+                <p class="font-semibold text-brand-ink">勤務形態</p>
+                <p class="mt-2">日勤・夜勤・時短勤務を選択可能。希望に合わせた配車で無理なく働けます。</p>
+              </div>
+              <div id="recruit-benefits" class="rounded-card border border-line-ice/60 bg-white/90 px-4 py-6 text-sm text-brand-ink/70">
+                <span class="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-sky/15 text-xs font-semibold text-brand-blue">03</span>
+                <p class="font-semibold text-brand-ink">福利厚生</p>
+                <p class="mt-2">社会保険完備／資格取得支援／安全運転表彰制度／子育て支援制度。</p>
+              </div>
+            </div>
+            <div class="flex flex-col gap-3 sm:flex-row sm:items-center">
+              <a
+                href="#contact"
+                data-glow
+                class="header-cta inline-flex items-center gap-2 rounded-full bg-brand-ink px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-[2px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+              >
+                採用情報を見る
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <p class="text-xs text-brand-ink/50">※採用に関するご相談もお問い合わせフォームから承ります。</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="scroll-mt-24 bg-base-cloud/90 py-16 sm:py-20">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="section-divider mb-10" data-animate-line>
+            <span class="h-3 w-3 rounded-full bg-brand-sky/70 shadow-[0_0_10px_rgba(29,160,230,0.45)]"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.4em] text-brand-ink/50">Contact</span>
+            <span class="divider-line h-px flex-1"></span>
+          </div>
+          <div class="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
+            <form class="space-y-6 rounded-card border border-line-ice/60 bg-white/95 p-8 shadow-card" id="contact-form" novalidate data-animate>
+              <div class="grid gap-6 md:grid-cols-2">
+                <label class="relative block">
+                  <input
+                    type="text"
+                    id="company"
+                    name="company"
+                    placeholder=" "
+                    required
+                    class="floating-label-input peer w-full rounded-md border border-brand-ink/15 bg-white/70 px-4 pb-2 pt-5 text-base text-brand-ink shadow-sm transition focus:border-brand-sky focus:outline-none focus:ring-2 focus:ring-brand-sky/20"
+                  />
+                  <span class="floating-label pointer-events-none absolute left-4 top-3 text-sm text-brand-ink/50 transition-all">会社名・組織名</span>
+                  <span class="mt-1 block text-xs text-red-600 hidden" data-error-for="company"></span>
+                  <span class="field-indicator absolute right-4 top-3 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-sky/15 text-brand-blue">
+                    <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M5 10.4 7.857 13 15 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </label>
+                <label class="relative block">
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    placeholder=" "
+                    required
+                    class="floating-label-input peer w-full rounded-md border border-brand-ink/15 bg-white/70 px-4 pb-2 pt-5 text-base text-brand-ink shadow-sm transition focus:border-brand-sky focus:outline-none focus:ring-2 focus:ring-brand-sky/20"
+                  />
+                  <span class="floating-label pointer-events-none absolute left-4 top-3 text-sm text-brand-ink/50 transition-all">ご担当者名</span>
+                  <span class="mt-1 block text-xs text-red-600 hidden" data-error-for="name"></span>
+                  <span class="field-indicator absolute right-4 top-3 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-sky/15 text-brand-blue">
+                    <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M5 10.4 7.857 13 15 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </label>
+              </div>
+              <div class="grid gap-6 md:grid-cols-2">
+                <label class="relative block">
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    placeholder=" "
+                    required
+                    class="floating-label-input peer w-full rounded-md border border-brand-ink/15 bg-white/70 px-4 pb-2 pt-5 text-base text-brand-ink shadow-sm transition focus:border-brand-sky focus:outline-none focus:ring-2 focus:ring-brand-sky/20"
+                  />
+                  <span class="floating-label pointer-events-none absolute left-4 top-3 text-sm text-brand-ink/50 transition-all">メールアドレス</span>
+                  <span class="mt-1 block text-xs text-red-600 hidden" data-error-for="email"></span>
+                  <span class="field-indicator absolute right-4 top-3 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-sky/15 text-brand-blue">
+                    <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M5 10.4 7.857 13 15 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </label>
+                <label class="relative block">
+                  <input
+                    type="tel"
+                    id="tel"
+                    name="tel"
+                    placeholder=" "
+                    class="floating-label-input peer w-full rounded-md border border-brand-ink/15 bg-white/70 px-4 pb-2 pt-5 text-base text-brand-ink shadow-sm transition focus:border-brand-sky focus:outline-none focus:ring-2 focus:ring-brand-sky/20"
+                  />
+                  <span class="floating-label pointer-events-none absolute left-4 top-3 text-sm text-brand-ink/50 transition-all">電話番号（任意）</span>
+                  <span class="field-indicator absolute right-4 top-3 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-sky/15 text-brand-blue">
+                    <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                      <path d="M5 10.4 7.857 13 15 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                    </svg>
+                  </span>
+                </label>
+              </div>
+              <label class="relative block">
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder=" "
+                  required
+                  class="floating-label-input peer w-full rounded-md border border-brand-ink/15 bg-white/70 px-4 pb-2 pt-5 text-base text-brand-ink shadow-sm transition focus:border-brand-sky focus:outline-none focus:ring-2 focus:ring-brand-sky/20"
+                ></textarea>
+                <span class="floating-label pointer-events-none absolute left-4 top-3 text-sm text-brand-ink/50 transition-all">ご相談内容</span>
+                <span class="mt-1 block text-xs text-red-600 hidden" data-error-for="message"></span>
+                <span class="field-indicator absolute right-4 top-3 inline-flex h-6 w-6 items-center justify-center rounded-full bg-brand-sky/15 text-brand-blue">
+                  <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                    <path d="M5 10.4 7.857 13 15 6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" />
+                  </svg>
+                </span>
+              </label>
+              <div class="space-y-4">
+                <fieldset>
+                  <legend class="text-sm font-semibold text-brand-ink">希望連絡方法</legend>
+                  <div class="mt-3 grid gap-3 md:grid-cols-3">
+                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink/70">
+                      <input type="radio" name="contact-method" value="email" class="text-brand-sky focus:ring-brand-sky/40" checked />
+                      <span>メール</span>
+                    </label>
+                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink/70">
+                      <input type="radio" name="contact-method" value="phone" class="text-brand-sky focus:ring-brand-sky/40" />
+                      <span>お電話</span>
+                    </label>
+                    <label class="inline-flex items-center gap-2 text-sm text-brand-ink/70">
+                      <input type="radio" name="contact-method" value="any" class="text-brand-sky focus:ring-brand-sky/40" />
+                      <span>どちらでも</span>
+                    </label>
+                  </div>
+                </fieldset>
+                <label class="flex items-start gap-3 text-sm text-brand-ink/70">
+                  <input
+                    id="privacy"
+                    type="checkbox"
+                    name="agree"
+                    required
+                    class="mt-1 h-4 w-4 rounded border border-brand-ink/25 text-brand-sky focus:ring-brand-sky/30"
+                  />
+                  <span>
+                    <span class="font-semibold text-brand-ink">個人情報の取り扱いに同意する</span><br />
+                    ご入力いただいた個人情報は、お問い合わせへの回答および当社サービスのご案内にのみ使用します。
+                  </span>
+                </label>
+                <span class="block text-xs text-red-600 hidden" data-error-for="privacy"></span>
+              </div>
+              <button
+                type="submit"
+                data-glow
+                class="header-cta inline-flex items-center gap-2 rounded-full bg-brand-ink px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+              >
+                送信する
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M4 12h15M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+              <div class="rounded-md border border-brand-sky/30 bg-brand-sky/5 p-4 text-left text-sm text-brand-blue" role="status" aria-live="polite" id="form-feedback"></div>
+            </form>
+            <div class="space-y-6 rounded-card border border-line-ice/60 bg-white/95 p-8 shadow-card" data-animate>
+              <h3 class="text-xl font-semibold text-brand-ink">お急ぎの方はこちらから</h3>
+              <p class="text-sm text-brand-ink/70">
+                平日 9:00 〜 18:00 はお電話でも受け付けています。時間外のお問い合わせはフォームよりお送りください。
+              </p>
+              <div class="space-y-3 text-sm text-brand-ink/70">
+                <p>電話：<a href="tel:0333334444" class="ml-1 text-brand-ink underline decoration-brand-sky/60">03-3333-4444</a></p>
+                <p>メール：<a href="mailto:info@solex-logistics.jp" class="ml-1 text-brand-ink underline decoration-brand-sky/60">info@solex-logistics.jp</a></p>
+                <p>所在地：東京都墨田区〇〇1-2-3</p>
+              </div>
+              <div class="rounded-card bg-base-cloud p-6">
+                <p class="text-sm font-semibold text-brand-ink">営業時間</p>
+                <ul class="mt-2 space-y-2 text-sm text-brand-ink/70">
+                  <li>平日 9:00〜18:00 / 土曜 9:00〜13:00</li>
+                  <li>※緊急チャーターは 24 時間受付</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer text-white">
+      <div class="mx-auto max-w-6xl px-6 py-16">
+        <div class="flex flex-col gap-12 lg:grid lg:grid-cols-[1.1fr_1.9fr]">
+          <div class="flex flex-col gap-8">
+            <a href="#home" class="flex items-center gap-3">
+              <img src="/assets/images/logo_image.jpg" alt="SOLEX LOGISTICS ロゴ" class="h-12 w-auto rounded-md bg-white/5 p-1" />
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-wide-en text-white">SOLEX LOGISTICS</p>
+                <p class="mt-1 text-sm footer-muted">全国輸送ネットワークを支える総合物流パートナー</p>
+              </div>
+            </a>
+            <p class="text-sm footer-muted md:max-w-sm">
+              迅速な調達配送から倉庫運用、輸送の可視化まで。SOLEX LOGISTICSは東日本を起点に全国へ、企業物流の最適化をサポートします。
+            </p>
+            <div class="space-y-4 text-sm footer-muted">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] footer-label">Contact</p>
+                <p class="mt-3">電話：<a href="tel:0333334444" class="text-white transition hover:text-brand-sky">03-3333-4444</a></p>
+                <p>メール：<a href="mailto:info@solex-logistics.jp" class="text-white transition hover:text-brand-sky">info@solex-logistics.jp</a></p>
+                <p class="mt-2">営業時間：平日 9:00〜18:00 / 土曜 9:00〜13:00</p>
+              </div>
+              <a
+                href="#contact"
+                data-glow
+                class="header-cta inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold text-white transition hover:-translate-y-[2px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+              >
+                お問い合わせはこちら
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="space-y-6">
+            <div class="md:hidden border-y border-white/10 py-6">
+              <nav aria-label="フッターナビ（モバイル）">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] footer-label">メニュー</p>
+                <ul class="mt-4 space-y-3 text-sm footer-muted">
+                  <li><a href="#home" class="transition hover:text-brand-sky">ホーム</a></li>
+                  <li><a href="#services" class="transition hover:text-brand-sky">事業紹介</a></li>
+                  <li><a href="#company" class="transition hover:text-brand-sky">会社情報</a></li>
+                  <li><a href="#recruit" class="transition hover:text-brand-sky">採用</a></li>
+                  <li><a href="#contact" class="transition hover:text-brand-sky">お問い合わせ</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="hidden md:flex md:items-start md:gap-12">
+              <nav aria-label="フッターナビ（デスクトップ）">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] footer-label">メニュー</p>
+                <ul class="mt-4 space-y-3 text-sm footer-muted">
+                  <li><a href="#home" class="transition hover:text-brand-sky">ホーム</a></li>
+                  <li><a href="#services" class="transition hover:text-brand-sky">事業紹介</a></li>
+                  <li><a href="#company" class="transition hover:text-brand-sky">会社情報</a></li>
+                  <li><a href="#recruit" class="transition hover:text-brand-sky">採用</a></li>
+                  <li><a href="#contact" class="transition hover:text-brand-sky">お問い合わせ</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 border-t border-white/10 pt-8 text-xs text-white/55">
+          <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between footer-legal">
+            <p class="footer-legal">〒130-0000 東京都墨田区〇〇1-2-3 SOLEXビル 6F</p>
+            <p class="footer-legal">Tel：03-3333-4444 / Mail：info@solex-logistics.jp</p>
+          </div>
+          <p class="mt-4 footer-copy">© 2024 SOLEX LOGISTICS Inc. All rights reserved.</p>
+        </div>
+      </div>
     </footer>
-
-    <!-- JavaScript -->
-    <script>
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobileMenu');
-            menu.classList.toggle('hidden');
-        }
-        
-        // スクロールアニメーション
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-        
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('show');
-                }
-            });
-        }, observerOptions);
-        
-        // スクロールアニメーション対象要素を監視
-        document.addEventListener('DOMContentLoaded', () => {
-            const scrollElements = document.querySelectorAll('.scroll-animate');
-            scrollElements.forEach(el => observer.observe(el));
-        });
-        
-        // パララックス効果（PCのみ）- 動画には適用しない
-        // 動画の場合は自然な動きがあるため、パララックス効果は不要
-        
-        // パーティクル生成
-        function createParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.animationDelay = Math.random() * 10 + 's';
-            particle.style.animationDuration = (10 + Math.random() * 10) + 's';
-            document.querySelector('.three-d-background').appendChild(particle);
-            
-            // アニメーション終了後に削除
-            setTimeout(() => {
-                particle.remove();
-            }, 20000);
-        }
-        
-        // 定期的にパーティクルを生成
-        setInterval(createParticle, 1000);
-        
-        // 初期パーティクル
-        for (let i = 0; i < 20; i++) {
-            setTimeout(createParticle, i * 500);
-        }
-        
-        // ヒーローパーティクル生成（青い光）
-        function createHeroParticle() {
-            const particle = document.createElement('div');
-            particle.className = 'hero-particle';
-            particle.style.left = Math.random() * 100 + '%';
-            particle.style.bottom = '0';
-            particle.style.animationDelay = Math.random() * 4 + 's';
-            particle.style.animationDuration = (4 + Math.random() * 2) + 's';
-            document.querySelector('.hero-3d-container').appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 6000);
-        }
-        
-        // ヒーローパーティクルを定期的に生成
-        setInterval(createHeroParticle, 800);
-        
-        // 初期ヒーローパーティクル
-        for (let i = 0; i < 8; i++) {
-            setTimeout(createHeroParticle, i * 500);
-        }
-        
-        // SOLEX LOGISTICS 文字アニメーション
-        document.addEventListener('DOMContentLoaded', () => {
-            const title = document.getElementById('animatedTitle');
-            if (!title) return;
-            
-            // 親要素のスタイルを保存
-            const computedStyle = window.getComputedStyle(title);
-            const originalBackground = computedStyle.background;
-            
-            const text = title.textContent;
-            title.textContent = '';
-            title.style.display = 'inline-block';
-            
-            // 文字を一文字ずつ分割
-            text.split('').forEach((letter, index) => {
-                const span = document.createElement('span');
-                span.textContent = letter === ' ' ? '\u00A0' : letter; // スペースを保持
-                span.className = 'letter-animation';
-                span.style.animationDelay = `${index * 0.05}s`;
-                span.style.display = 'inline-block';
-                // 各文字にも同じスタイルを適用
-                span.style.fontWeight = '900';
-                span.style.fontSize = 'inherit';
-                span.style.letterSpacing = 'inherit';
-                title.appendChild(span);
-            });
-            
-            // 親要素に背景を再適用
-            title.style.background = originalBackground;
-        });
-    </script>
-</body>
+  </body>
 </html>
