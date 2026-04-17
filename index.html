@@ -794,7 +794,7 @@
         <nav class="hidden items-center gap-8 text-sm font-medium text-brand-ink/75 md:flex">
           <a href="#home" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">ホーム</a>
           <a href="#services" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">事業紹介</a>
-          <a href="#company" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">会社情報</a>
+          <a href="/company.html" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">会社概要</a>
           <a href="#recruit" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">採用</a>
           <a href="#contact" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">お問い合わせ</a>
         </nav>
@@ -854,7 +854,7 @@
         <div class="mt-10 flex flex-col gap-6 text-lg font-medium text-brand-ink/90">
           <a href="#home" class="mobile-nav-link">ホーム</a>
           <a href="#services" class="mobile-nav-link">事業紹介</a>
-          <a href="#company" class="mobile-nav-link">会社情報</a>
+          <a href="/company.html" class="mobile-nav-link">会社概要</a>
           <a href="#recruit" class="mobile-nav-link">採用</a>
           <a href="#contact" class="mobile-nav-link">お問い合わせ</a>
           <a
@@ -922,7 +922,7 @@
         <div class="mx-auto max-w-6xl px-6">
           <div class="trust-collage-cta mb-10 flex justify-center md:justify-end" data-animate>
             <a
-              href="#company"
+              href="/company.html"
               class="about-pill"
             >
               <span>私たちについて</span>
@@ -1210,28 +1210,35 @@
             <span class="divider-line h-px flex-1"></span>
           </div>
           <div class="grid gap-10 md:grid-cols-[1.1fr_0.9fr]">
-            <blockquote class="rounded-card border-l-4 border-brand-sky bg-white/80 p-6 text-base text-brand-ink/75 shadow-card md:text-lg" data-animate>
-              <p>
-                「物流は人と地域をつなぐインフラです。私たちは25年積み重ねた信頼と現場力を武器に、時代に合わせた最適な輸送のかたちを追求し続けます。SOLEX LOGISTICS という新しい名のもと、お客様と共に次のフィールドへ踏み出します。」
+            <div class="rounded-card border-l-4 border-brand-sky bg-white/80 p-6 text-base text-brand-ink/75 shadow-card md:text-lg" data-animate>
+              <p class="text-xs font-semibold uppercase tracking-[0.32em] text-brand-ink/45">Company Overview</p>
+              <h3 class="mt-4 font-serif text-2xl leading-relaxed text-brand-ink">会社概要</h3>
+              <p class="mt-4 text-sm leading-relaxed text-brand-ink/70 md:text-base">
+                本社、メルク事業部、代表者、代表電話などの会社情報を掲載しています。
               </p>
-              <cite class="mt-4 block text-sm font-semibold text-brand-blue">代表取締役社長　山田 太郎</cite>
-            </blockquote>
+              <a
+                href="/company.html"
+                data-glow
+                class="header-cta mt-6 inline-flex items-center gap-2 rounded-full bg-brand-ink px-5 py-2 text-sm font-semibold text-white transition hover:-translate-y-[2px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+              >
+                会社概要を見る
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
             <div class="rounded-card border border-line-ice/60 bg-white/90 p-6 shadow-card" data-animate>
               <dl class="grid grid-cols-[auto_1fr] gap-x-4 gap-y-3 text-sm text-brand-ink/70">
                 <dt class="font-semibold text-brand-ink">社名</dt>
-                <dd>株式会社SOLEX</dd>
-                <dt class="font-semibold text-brand-ink">所在地</dt>
-                <dd>東京都墨田区〇〇1-2-3</dd>
-                <dt class="font-semibold text-brand-ink">設立</dt>
-                <dd>1999年4月</dd>
+                <dd>株式会社ソレックス</dd>
                 <dt class="font-semibold text-brand-ink">代表者</dt>
-                <dd>代表取締役社長　山田 太郎</dd>
-                <dt class="font-semibold text-brand-ink">事業内容</dt>
-                <dd>一般貨物運送事業／軽貨物運送事業／物流コンサルティング</dd>
-                <dt class="font-semibold text-brand-ink">保有車両数</dt>
-                <dd>大型・中型：48台／軽貨物：62台</dd>
-                <dt class="font-semibold text-brand-ink">主要取引銀行</dt>
-                <dd>三井住友銀行 押上支店／りそな銀行 錦糸町支店</dd>
+                <dd>代表取締役　鈴木 雄司</dd>
+                <dt class="font-semibold text-brand-ink">本社</dt>
+                <dd>〒175-0082 東京都板橋区高島平7-23-21-203</dd>
+                <dt class="font-semibold text-brand-ink">メルク事業部</dt>
+                <dd>〒332-0004 埼玉県川口市領家1-21-9 坂井ビル1F</dd>
+                <dt class="font-semibold text-brand-ink">代表電話</dt>
+                <dd>03-5968-5250</dd>
               </dl>
             </div>
           </div>
@@ -1460,9 +1467,9 @@
                 平日 9:00 〜 18:00 はお電話でも受け付けています。時間外のお問い合わせはフォームよりお送りください。
               </p>
               <div class="space-y-3 text-sm text-brand-ink/70">
-                <p>電話：<a href="tel:0333334444" class="ml-1 text-brand-ink underline decoration-brand-sky/60">03-3333-4444</a></p>
-                <p>メール：<a href="mailto:info@solex-logistics.jp" class="ml-1 text-brand-ink underline decoration-brand-sky/60">info@solex-logistics.jp</a></p>
-                <p>所在地：東京都墨田区〇〇1-2-3</p>
+                <p>電話：<a href="tel:0359685250" class="ml-1 text-brand-ink underline decoration-brand-sky/60">03-5968-5250</a></p>
+                <p>ご連絡：お問い合わせフォームより承ります</p>
+                <p>本社：東京都板橋区高島平7-23-21-203</p>
               </div>
               <div class="rounded-card bg-base-cloud p-6">
                 <p class="text-sm font-semibold text-brand-ink">営業時間</p>
@@ -1493,8 +1500,8 @@
             <div class="space-y-4 text-sm footer-muted">
               <div>
                 <p class="text-xs font-semibold uppercase tracking-[0.18em] footer-label">Contact</p>
-                <p class="mt-3">電話：<a href="tel:0333334444" class="text-white transition hover:text-brand-sky">03-3333-4444</a></p>
-                <p>メール：<a href="mailto:info@solex-logistics.jp" class="text-white transition hover:text-brand-sky">info@solex-logistics.jp</a></p>
+                <p class="mt-3">電話：<a href="tel:0359685250" class="text-white transition hover:text-brand-sky">03-5968-5250</a></p>
+                <p class="mt-2">ご連絡はお問い合わせフォームより承ります。</p>
                 <p class="mt-2">営業時間：平日 9:00〜18:00 / 土曜 9:00〜13:00</p>
               </div>
               <a
@@ -1516,7 +1523,7 @@
                 <ul class="mt-4 space-y-3 text-sm footer-muted">
                   <li><a href="#home" class="transition hover:text-brand-sky">ホーム</a></li>
                   <li><a href="#services" class="transition hover:text-brand-sky">事業紹介</a></li>
-                  <li><a href="#company" class="transition hover:text-brand-sky">会社情報</a></li>
+                  <li><a href="/company.html" class="transition hover:text-brand-sky">会社概要</a></li>
                   <li><a href="#recruit" class="transition hover:text-brand-sky">採用</a></li>
                   <li><a href="#contact" class="transition hover:text-brand-sky">お問い合わせ</a></li>
                 </ul>
@@ -1528,7 +1535,7 @@
                 <ul class="mt-4 space-y-3 text-sm footer-muted">
                   <li><a href="#home" class="transition hover:text-brand-sky">ホーム</a></li>
                   <li><a href="#services" class="transition hover:text-brand-sky">事業紹介</a></li>
-                  <li><a href="#company" class="transition hover:text-brand-sky">会社情報</a></li>
+                  <li><a href="/company.html" class="transition hover:text-brand-sky">会社概要</a></li>
                   <li><a href="#recruit" class="transition hover:text-brand-sky">採用</a></li>
                   <li><a href="#contact" class="transition hover:text-brand-sky">お問い合わせ</a></li>
                 </ul>
@@ -1538,8 +1545,8 @@
         </div>
         <div class="mt-12 border-t border-white/10 pt-8 text-xs text-white/55">
           <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between footer-legal">
-            <p class="footer-legal">〒130-0000 東京都墨田区〇〇1-2-3 SOLEXビル 6F</p>
-            <p class="footer-legal">Tel：03-3333-4444 / Mail：info@solex-logistics.jp</p>
+            <p class="footer-legal">〒175-0082 東京都板橋区高島平7-23-21-203</p>
+            <p class="footer-legal">Tel：03-5968-5250</p>
           </div>
           <p class="mt-4 footer-copy">© 2024 SOLEX LOGISTICS Inc. All rights reserved.</p>
         </div>

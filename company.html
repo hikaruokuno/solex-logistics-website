@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>会社概要｜SOLEX LOGISTICS</title>
+    <meta
+      name="description"
+      content="SOLEX LOGISTICS の会社概要ページです。本社とメルク事業部の所在地、代表者、代表電話を掲載しています。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="会社概要｜SOLEX LOGISTICS" />
+    <meta
+      property="og:description"
+      content="SOLEX LOGISTICS の会社概要ページです。本社とメルク事業部の所在地、代表者、代表電話を掲載しています。"
+    />
+    <meta property="og:image" content="/assets/images/hero.jpg" />
+    <meta property="og:locale" content="ja_JP" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@500;600;700;900&display=swap" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              'brand-blue': '#0D4D8B',
+              'brand-sky': '#1DA0E6',
+              'brand-ink': '#102437',
+              'base-cloud': '#F4F7FB',
+              'line-ice': '#D4DFEB'
+            },
+            fontFamily: {
+              sans: ['"Noto Sans JP"', 'system-ui', 'sans-serif'],
+              serif: ['"Noto Serif JP"', 'serif']
+            },
+            letterSpacing: {
+              'wide-en': '0.2em'
+            },
+            borderRadius: {
+              card: '0.5rem'
+            },
+            boxShadow: {
+              card: '0 22px 48px rgba(16, 24, 32, 0.12)'
+            }
+          }
+        }
+      };
+    </script>
+    <script src="https://cdn.tailwindcss.com/3.4.4?plugins=forms,typography"></script>
+    <style>
+      :root {
+        color-scheme: light;
+      }
+
+      html {
+        overflow-x: hidden;
+      }
+
+      body {
+        background-color: #f4f7fb;
+        color: #102437;
+        overflow-x: hidden;
+      }
+
+      .nav-link {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        padding-bottom: 0.35rem;
+        transition: color 0.2s ease;
+      }
+
+      .nav-link::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        height: 2px;
+        transform: scaleX(0);
+        transform-origin: left;
+        background: currentColor;
+        opacity: 0.65;
+        transition: transform 0.25s ease;
+      }
+
+      .nav-link:hover::after,
+      .nav-link:focus-visible::after {
+        transform: scaleX(1);
+      }
+
+      .header-cta {
+        position: relative;
+        isolation: isolate;
+        overflow: hidden;
+      }
+
+      .header-cta::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        border-radius: inherit;
+        background: radial-gradient(circle at var(--glow-x, 50%) var(--glow-y, 50%), rgba(29, 160, 230, 0.28), transparent 55%);
+        opacity: 0;
+        transition: opacity 0.25s ease;
+        z-index: -1;
+      }
+
+      .header-cta:hover::before,
+      .header-cta:focus-visible::before {
+        opacity: 1;
+      }
+
+      .mobile-menu-backdrop {
+        backdrop-filter: blur(18px);
+        background: rgba(255, 255, 255, 0.92);
+      }
+
+      .mobile-nav-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        font-weight: 600;
+        color: rgba(16, 24, 32, 0.88);
+        padding-block: 0.5rem;
+      }
+
+      .mobile-nav-link::before {
+        content: '';
+        width: 0.5rem;
+        height: 0.5rem;
+        border-radius: 9999px;
+        background: linear-gradient(120deg, rgba(0, 200, 215, 0.8), rgba(10, 160, 188, 0.65));
+      }
+
+      .page-band {
+        position: relative;
+        overflow: hidden;
+        background:
+          linear-gradient(135deg, rgba(13, 77, 139, 0.9), rgba(29, 160, 230, 0.45)),
+          linear-gradient(180deg, #f4f7fb, #f4f7fb);
+      }
+
+      .page-band::before {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background-image: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="160" height="160" viewBox="0 0 160 160"%3E%3Cfilter id="n"%3E%3CfeTurbulence type="fractalNoise" baseFrequency="1.1" numOctaves="2" stitchTiles="stitch"/%3E%3C/filter%3E%3Crect width="160" height="160" filter="url(%23n)" opacity="0.16"/%3E%3C/svg%3E');
+        mix-blend-mode: multiply;
+        opacity: 0.28;
+      }
+
+      .section-divider {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+      }
+
+      .section-divider .divider-line {
+        background: linear-gradient(90deg, rgba(16, 24, 32, 0), rgba(16, 24, 32, 0.28), rgba(16, 24, 32, 0));
+      }
+
+      .site-footer {
+        background: linear-gradient(160deg, #102437 0%, #0d1d33 58%);
+        color: #f7fbff;
+      }
+
+      .site-footer a {
+        color: rgba(255, 255, 255, 0.82);
+      }
+
+      .site-footer a:hover,
+      .site-footer a:focus-visible {
+        color: #1da0e6;
+      }
+
+      .site-footer .footer-muted {
+        color: rgba(255, 255, 255, 0.72);
+      }
+
+      .site-footer .footer-label {
+        color: rgba(255, 255, 255, 0.54);
+      }
+
+      .site-footer .footer-legal {
+        color: rgba(255, 255, 255, 0.55);
+      }
+
+      .site-footer .footer-copy {
+        color: rgba(255, 255, 255, 0.42);
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "株式会社ソレックス",
+        "alternateName": "SOLEX LOGISTICS",
+        "url": "https://solex-logistics.jp/company.html",
+        "logo": "https://solex-logistics.jp/assets/images/logo_image.jpg",
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "telephone": "+81-3-5968-5250",
+          "contactType": "customer service",
+          "areaServed": "JP",
+          "availableLanguage": "ja"
+        }
+      }
+    </script>
+    <script src="/assets/js/main.js" defer></script>
+  </head>
+  <body class="bg-base-cloud font-sans leading-relaxed text-brand-ink antialiased">
+    <a
+      href="#main"
+      class="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded focus:bg-white focus:px-4 focus:py-2 focus:shadow-lg"
+    >
+      本文へスキップ
+    </a>
+    <header id="site-header" class="sticky top-0 z-40 border-b border-line-ice/70 bg-white/85 backdrop-blur transition-shadow">
+      <div class="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-6">
+        <a href="/" class="flex items-center gap-3">
+          <img src="/assets/images/logo_image.jpg" alt="SOLEX LOGISTICS ロゴ" class="h-12 w-auto" />
+          <span class="text-lg font-semibold text-brand-ink uppercase tracking-wide-en">SOLEX LOGISTICS</span>
+        </a>
+        <nav class="hidden items-center gap-8 text-sm font-medium text-brand-ink/75 md:flex">
+          <a href="/" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">ホーム</a>
+          <a href="/#services" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">事業紹介</a>
+          <a href="/company.html" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">会社概要</a>
+          <a href="/#recruit" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">採用</a>
+          <a href="/#contact" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">お問い合わせ</a>
+        </nav>
+        <div class="hidden items-center gap-4 md:flex">
+          <a
+            href="/#contact"
+            data-glow
+            class="header-cta inline-flex items-center gap-2 rounded-full border border-brand-ink/60 px-5 py-2.5 text-sm font-semibold text-brand-ink transition-all duration-200 hover:-translate-y-0.5 hover:text-brand-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+          >
+            <span>お問い合わせ</span>
+            <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </a>
+        </div>
+        <button
+          type="button"
+          class="flex h-11 w-11 items-center justify-center rounded-full border border-brand-ink/20 text-brand-ink transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky md:hidden"
+          id="mobile-menu-button"
+          aria-expanded="false"
+          aria-controls="mobile-menu"
+        >
+          <span class="sr-only">メニューを開く</span>
+          <span class="block h-0.5 w-6 bg-current transition-all" data-line="top"></span>
+          <span class="mt-1.5 block h-0.5 w-6 bg-current transition-all" data-line="middle"></span>
+          <span class="mt-1.5 block h-0.5 w-6 bg-current transition-all" data-line="bottom"></span>
+        </button>
+      </div>
+      <div
+        id="mobile-menu"
+        class="mobile-menu-backdrop fixed inset-x-0 top-0 z-30 hidden min-h-screen px-6 py-8"
+        role="dialog"
+        aria-modal="true"
+      >
+        <div class="flex items-center justify-between">
+          <a href="/" class="flex items-center gap-3">
+            <img src="/assets/images/logo_image.jpg" alt="SOLEX LOGISTICS ロゴ" class="h-10 w-auto" />
+            <span class="text-lg font-semibold text-brand-ink uppercase tracking-wide-en">SOLEX LOGISTICS</span>
+          </a>
+          <button
+            type="button"
+            class="flex h-11 w-11 items-center justify-center rounded-full border border-brand-ink/20 text-brand-ink transition focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+            id="mobile-menu-close"
+          >
+            <span class="sr-only">メニューを閉じる</span>
+            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path stroke="currentColor" stroke-linecap="round" stroke-width="1.5" d="m6 6 12 12M18 6 6 18" />
+            </svg>
+          </button>
+        </div>
+        <div class="mt-10 flex flex-col gap-6 text-lg font-medium text-brand-ink/90">
+          <a href="/" class="mobile-nav-link">ホーム</a>
+          <a href="/#services" class="mobile-nav-link">事業紹介</a>
+          <a href="/company.html" class="mobile-nav-link">会社概要</a>
+          <a href="/#recruit" class="mobile-nav-link">採用</a>
+          <a href="/#contact" class="mobile-nav-link">お問い合わせ</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="page-band relative">
+        <div class="relative z-10 mx-auto max-w-6xl px-6 py-24 sm:py-28">
+          <div class="max-w-3xl rounded-card bg-white/82 p-8 shadow-card backdrop-blur-sm">
+            <p class="text-xs font-semibold uppercase tracking-[0.32em] text-brand-ink/45">Company Profile</p>
+            <h1 class="mt-4 font-serif text-4xl leading-relaxed text-brand-ink md:text-5xl">会社概要</h1>
+            <p class="mt-5 text-base text-brand-ink/70 md:text-lg">
+              本社、メルク事業部、代表者、代表電話を掲載しています。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white/95 py-16 sm:py-20">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="section-divider mb-10">
+            <span class="h-3 w-3 rounded-full bg-brand-sky/70 shadow-[0_0_10px_rgba(29,160,230,0.45)]"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.4em] text-brand-ink/50">Overview</span>
+            <span class="divider-line h-px flex-1"></span>
+          </div>
+          <div class="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
+            <div class="rounded-card border border-line-ice/60 bg-base-cloud/80 p-8 shadow-card">
+              <p class="text-sm font-semibold text-brand-ink">お問い合わせ</p>
+              <p class="mt-4 text-sm leading-relaxed text-brand-ink/70">
+                ご相談やお見積もりのご依頼は、お問い合わせフォームより承っています。
+              </p>
+              <a
+                href="/#contact"
+                data-glow
+                class="header-cta mt-6 inline-flex items-center gap-2 rounded-full bg-brand-ink px-5 py-2 text-sm font-semibold text-white transition hover:-translate-y-[2px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+              >
+                お問い合わせフォームへ
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+            <div class="rounded-card border border-line-ice/60 bg-white/90 p-8 shadow-card">
+              <dl class="grid grid-cols-[auto_1fr] gap-x-5 gap-y-4 text-sm text-brand-ink/70 md:text-base">
+                <dt class="font-semibold text-brand-ink">会社名</dt>
+                <dd>株式会社ソレックス</dd>
+                <dt class="font-semibold text-brand-ink">代表者</dt>
+                <dd>代表取締役 鈴木 雄司</dd>
+                <dt class="font-semibold text-brand-ink">代表電話</dt>
+                <dd><a href="tel:0359685250" class="underline decoration-brand-sky/60">03-5968-5250</a></dd>
+                <dt class="font-semibold text-brand-ink">お問い合わせ</dt>
+                <dd>サイト内のお問い合わせフォームをご利用ください</dd>
+              </dl>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-base-cloud/90 py-16 sm:py-20">
+        <div class="mx-auto max-w-6xl px-6">
+          <div class="section-divider mb-10">
+            <span class="h-3 w-3 rounded-full bg-brand-sky/70 shadow-[0_0_10px_rgba(29,160,230,0.45)]"></span>
+            <span class="text-xs font-semibold uppercase tracking-[0.4em] text-brand-ink/50">Offices</span>
+            <span class="divider-line h-px flex-1"></span>
+          </div>
+          <div class="grid gap-8 md:grid-cols-2">
+            <article class="rounded-card border border-line-ice/60 bg-white/90 p-8 shadow-card">
+              <p class="text-xs font-semibold uppercase tracking-[0.32em] text-brand-ink/45">Head Office</p>
+              <h2 class="mt-3 font-serif text-2xl text-brand-ink">本社</h2>
+              <dl class="mt-6 space-y-4 text-sm text-brand-ink/70 md:text-base">
+                <div>
+                  <dt class="font-semibold text-brand-ink">所在地</dt>
+                  <dd class="mt-1">〒175-0082 東京都板橋区高島平7-23-21-203</dd>
+                </div>
+                <div>
+                  <dt class="font-semibold text-brand-ink">電話</dt>
+                  <dd class="mt-1"><a href="tel:0359685250" class="underline decoration-brand-sky/60">03-5968-5250</a></dd>
+                </div>
+              </dl>
+            </article>
+            <article class="rounded-card border border-line-ice/60 bg-white/90 p-8 shadow-card">
+              <p class="text-xs font-semibold uppercase tracking-[0.32em] text-brand-ink/45">Merk Division</p>
+              <h2 class="mt-3 font-serif text-2xl text-brand-ink">メルク事業部</h2>
+              <dl class="mt-6 space-y-4 text-sm text-brand-ink/70 md:text-base">
+                <div>
+                  <dt class="font-semibold text-brand-ink">所在地</dt>
+                  <dd class="mt-1">〒332-0004 埼玉県川口市領家1-21-9 坂井ビル1F</dd>
+                </div>
+                <div>
+                  <dt class="font-semibold text-brand-ink">電話</dt>
+                  <dd class="mt-1"><a href="tel:0482994432" class="underline decoration-brand-sky/60">048-299-4432</a></dd>
+                </div>
+                <div>
+                  <dt class="font-semibold text-brand-ink">FAX</dt>
+                  <dd class="mt-1">048-299-4442</dd>
+                </div>
+              </dl>
+            </article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer text-white">
+      <div class="mx-auto max-w-6xl px-6 py-16">
+        <div class="flex flex-col gap-12 lg:grid lg:grid-cols-[1.1fr_1.9fr]">
+          <div class="flex flex-col gap-8">
+            <a href="/" class="flex items-center gap-3">
+              <img src="/assets/images/logo_image.jpg" alt="SOLEX LOGISTICS ロゴ" class="h-12 w-auto rounded-md bg-white/5 p-1" />
+              <div>
+                <p class="text-sm font-semibold uppercase tracking-wide-en text-white">SOLEX LOGISTICS</p>
+                <p class="mt-1 text-sm footer-muted">全国輸送ネットワークを支える総合物流パートナー</p>
+              </div>
+            </a>
+            <p class="text-sm footer-muted md:max-w-sm">
+              会社情報の確認からお問い合わせまで、必要な導線をこのページにまとめています。個別のメールアドレスと携帯番号は公開していません。
+            </p>
+            <div class="space-y-4 text-sm footer-muted">
+              <div>
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] footer-label">Contact</p>
+                <p class="mt-3">電話：<a href="tel:0359685250" class="text-white transition hover:text-brand-sky">03-5968-5250</a></p>
+                <p class="mt-2">ご連絡はお問い合わせフォームより承ります。</p>
+              </div>
+              <a
+                href="/#contact"
+                data-glow
+                class="header-cta inline-flex w-fit items-center gap-2 rounded-full border border-white/20 bg-white/10 px-5 py-2 text-sm font-semibold text-white transition hover:-translate-y-[2px] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-brand-sky"
+              >
+                お問い合わせはこちら
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                  <path d="M5 12h13M13 5l7 7-7 7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="space-y-6">
+            <div class="md:hidden border-y border-white/10 py-6">
+              <nav aria-label="フッターナビ（モバイル）">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] footer-label">メニュー</p>
+                <ul class="mt-4 space-y-3 text-sm footer-muted">
+                  <li><a href="/" class="transition hover:text-brand-sky">ホーム</a></li>
+                  <li><a href="/#services" class="transition hover:text-brand-sky">事業紹介</a></li>
+                  <li><a href="/company.html" class="transition hover:text-brand-sky">会社概要</a></li>
+                  <li><a href="/#recruit" class="transition hover:text-brand-sky">採用</a></li>
+                  <li><a href="/#contact" class="transition hover:text-brand-sky">お問い合わせ</a></li>
+                </ul>
+              </nav>
+            </div>
+            <div class="hidden md:flex md:items-start md:gap-12">
+              <nav aria-label="フッターナビ（デスクトップ）">
+                <p class="text-xs font-semibold uppercase tracking-[0.18em] footer-label">メニュー</p>
+                <ul class="mt-4 space-y-3 text-sm footer-muted">
+                  <li><a href="/" class="transition hover:text-brand-sky">ホーム</a></li>
+                  <li><a href="/#services" class="transition hover:text-brand-sky">事業紹介</a></li>
+                  <li><a href="/company.html" class="transition hover:text-brand-sky">会社概要</a></li>
+                  <li><a href="/#recruit" class="transition hover:text-brand-sky">採用</a></li>
+                  <li><a href="/#contact" class="transition hover:text-brand-sky">お問い合わせ</a></li>
+                </ul>
+              </nav>
+            </div>
+          </div>
+        </div>
+        <div class="mt-12 border-t border-white/10 pt-8 text-xs text-white/55">
+          <div class="flex flex-col gap-2 md:flex-row md:items-center md:justify-between footer-legal">
+            <p class="footer-legal">〒175-0082 東京都板橋区高島平7-23-21-203</p>
+            <p class="footer-legal">Tel：03-5968-5250</p>
+          </div>
+          <p class="mt-4 footer-copy">© 2024 SOLEX LOGISTICS Inc. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
