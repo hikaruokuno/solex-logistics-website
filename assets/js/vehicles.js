@@ -40,11 +40,38 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     {
-      id: 'vehicle-02',
-      status: 'coming-soon',
-      name: '車両 02',
-      bodyType: '掲載準備中',
-      dimensions: '後日公開予定'
+      id: '2t-short-body',
+      status: 'active',
+      name: '2トン車 ショートボディー',
+      bodyType: 'ショートボディー / 箱車',
+      dimensions: '約310×177×182cm',
+      summary: '市街地での配送や、扱いやすいサイズ感を活かしたスポット輸送に対応しやすい車両です。',
+      suitableFor: ['店舗・オフィス配送', '小型什器・備品搬送', '市街地でのスポット輸送', '段ボール・ケース物の配送'],
+      specs: [
+        ['車両名', '2トン車 ショートボディー'],
+        ['荷台寸法', '約310×177×182cm'],
+        ['最大積載量', '2,000kg'],
+        ['対応イメージ', '市街地配送・小回りが必要な案件']
+      ],
+      features: [
+        'ショートボディーのため、住宅街や市街地などでも取り回しやすい車両です。',
+        '段ボールやケース物、小型什器・備品などの配送に向いています。',
+        '荷室高も確保されており、高さのある荷物にも対応しやすい構成です。'
+      ],
+      images: [
+        {
+          src: '/assets/images/vehicles/2t-short-body-front-side.png',
+          alt: '2トン車 ショートボディーの前方斜め外観'
+        },
+        {
+          src: '/assets/images/vehicles/2t-short-body-rear-side.png',
+          alt: '2トン車 ショートボディーの後方斜め外観'
+        },
+        {
+          src: '/assets/images/vehicles/2t-short-body-cargo-inside.png',
+          alt: '2トン車 ショートボディーの荷室内部'
+        }
+      ]
     },
     {
       id: 'vehicle-03',
