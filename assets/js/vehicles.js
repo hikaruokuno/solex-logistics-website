@@ -1,18 +1,18 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Add future vehicles here. Active vehicles render full detail sections.
+  // Public vehicle lineup data. Add new vehicles to this array as needed.
   const vehicles = [
     {
       id: '2t-wide-long',
-      status: 'active',
       name: '2トン車 ワイドロング',
       bodyType: 'ワイドロング / 箱車',
-      dimensions: '約445×207×225cm',
+      cardMetaLabel: '内寸',
+      cardMetaValue: '約445×207×225cm',
       summary: 'まとまった荷量のスポット輸送や、かさのある荷物の搬送に対応しやすい車両です。',
       suitableFor: ['家電・家具配送', '什器・イベント資材', '拠点間のスポット輸送', '法人向けのまとまった段ボール案件'],
       specs: [
         ['車両名', '2トン車 ワイドロング'],
         ['内寸', '約445×207×225cm'],
-        ['荷室写真', '複数枚掲載'],
+        ['掲載写真', '外観・荷室写真あり'],
         ['対応イメージ', 'まとまった荷量・かさのある荷物']
       ],
       features: [
@@ -41,10 +41,10 @@ document.addEventListener('DOMContentLoaded', () => {
     },
     {
       id: '2t-short-body',
-      status: 'active',
       name: '2トン車 ショートボディー',
       bodyType: 'ショートボディー / 箱車',
-      dimensions: '約310×177×182cm',
+      cardMetaLabel: '荷台寸法',
+      cardMetaValue: '約310×177×182cm',
       summary: '市街地での配送や、扱いやすいサイズ感を活かしたスポット輸送に対応しやすい車両です。',
       suitableFor: ['店舗・オフィス配送', '小型什器・備品搬送', '市街地でのスポット輸送', '段ボール・ケース物の配送'],
       specs: [
@@ -74,69 +74,111 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     {
-      id: 'vehicle-03',
-      status: 'coming-soon',
-      name: '車両 03',
-      bodyType: '掲載準備中',
-      dimensions: '後日公開予定'
+      id: '1t-van',
+      name: '1トンバン車両',
+      bodyType: '1トンバン / 箱型バン',
+      cardMetaLabel: '特徴',
+      cardMetaValue: '濃いスモーク仕様',
+      summary: '荷物を外から見えにくくしながら、雨風を避けて運びたい案件に対応しやすいバンタイプです。',
+      suitableFor: ['精密機器・備品配送', 'ルート配送・チャーター便', '荷姿を見せたくない案件', '雨風を避けたい荷物'],
+      specs: [
+        ['車両名', '1トンバン車両'],
+        ['車両タイプ', '1トンクラスの箱型バン'],
+        ['特徴', '積載貨物が見えにくい濃いスモーク仕様'],
+        ['対応イメージ', '機材・備品・ボックス物の配送']
+      ],
+      features: [
+        '濃いスモークが入っており、積載貨物が外から見えにくい車両です。',
+        '箱型バンのため、雨風を避けたい荷物や備品の輸送にも向いています。',
+        'ルート配送やチャーター便など、見た目の配慮が必要な案件でも使いやすい構成です。'
+      ],
+      images: [
+        {
+          src: '/assets/images/vehicles/1t-van-black-front.png',
+          alt: '1トンバン車両の前方斜め外観'
+        },
+        {
+          src: '/assets/images/vehicles/1t-van-black-rear.png',
+          alt: '1トンバン車両の後方斜め外観'
+        },
+        {
+          src: '/assets/images/vehicles/1t-van-black-cargo-open.jpg',
+          alt: '1トンバン車両の荷室開口部'
+        },
+        {
+          src: '/assets/images/vehicles/1t-van-silver-front.png',
+          alt: '1トンバン車両の前方外観（シルバー）'
+        },
+        {
+          src: '/assets/images/vehicles/1t-van-silver-side.png',
+          alt: '1トンバン車両の側面外観（シルバー）'
+        }
+      ]
     },
     {
-      id: 'vehicle-04',
-      status: 'coming-soon',
-      name: '車両 04',
-      bodyType: '掲載準備中',
-      dimensions: '後日公開予定'
-    },
-    {
-      id: 'vehicle-05',
-      status: 'coming-soon',
-      name: '車両 05',
-      bodyType: '掲載準備中',
-      dimensions: '後日公開予定'
+      id: 'kei-cargo',
+      name: '軽貨物車',
+      bodyType: '軽バン / 軽貨物',
+      cardMetaLabel: '荷室寸法の目安',
+      cardMetaValue: '約191.5×127×125cm',
+      summary: '小回りの良さを活かして、近距離配送や少量多頻度の案件に対応しやすい軽貨物車です。',
+      suitableFor: ['小口配送・宅配', '書類・部品・サンプル便', '都内・住宅街の配送', '緊急スポット便'],
+      specs: [
+        ['車両名', '軽貨物車'],
+        ['荷室寸法の目安', '約191.5×127×125cm（2名乗車時）'],
+        ['最大積載量', '350kg'],
+        ['対応イメージ', '小口配送・緊急スポット便']
+      ],
+      features: [
+        '軽バンならではの取り回しやすさがあり、住宅街や狭い道路での配送にも向いています。',
+        '小口配送や緊急便、書類・部品などの少量案件で使いやすいサイズ感です。',
+        '日用品やケース物、書類・部品などの小口案件に幅広く対応しやすい車両です。'
+      ],
+      images: [
+        {
+          src: '/assets/images/vehicles/kei-cargo-front-side.png',
+          alt: '軽貨物車の前方斜め外観'
+        },
+        {
+          src: '/assets/images/vehicles/kei-cargo-front.png',
+          alt: '軽貨物車の前方外観'
+        },
+        {
+          src: '/assets/images/vehicles/kei-cargo-rear-side.png',
+          alt: '軽貨物車の後方斜め外観'
+        }
+      ]
     }
   ];
 
   const listContainer = document.getElementById('vehicle-list');
   const detailContainer = document.getElementById('vehicle-details');
-  const upcomingContainer = document.getElementById('vehicle-upcoming');
 
-  if (!listContainer || !detailContainer || !upcomingContainer) return;
-
-  const activeVehicles = vehicles.filter((vehicle) => vehicle.status === 'active');
-  const upcomingVehicles = vehicles.filter((vehicle) => vehicle.status !== 'active');
+  if (!listContainer || !detailContainer) return;
 
   listContainer.innerHTML = vehicles
-    .map((vehicle, index) => {
+    .map((vehicle) => {
       const chips = vehicle.suitableFor
-        ? vehicle.suitableFor
-            .slice(0, 3)
-            .map((item) => `<li class="vehicle-chip">${item}</li>`)
-            .join('')
-        : '<li class="vehicle-chip vehicle-chip--muted">情報準備中</li>';
+        .slice(0, 3)
+        .map((item) => `<li class="vehicle-chip">${item}</li>`)
+        .join('');
 
-      const link = vehicle.status === 'active'
-        ? `<a href="#detail-${vehicle.id}" class="vehicle-card__link">詳細を見る</a>`
-        : '<span class="vehicle-card__link vehicle-card__link--muted">掲載準備中</span>';
+      const metaLabel = vehicle.cardMetaLabel || '内寸';
+      const metaValue = vehicle.cardMetaValue || '';
 
       return `
         <article class="vehicle-card">
-          <div class="vehicle-card__head">
-            <span class="vehicle-card__index">Vehicle ${String(index + 1).padStart(2, '0')}</span>
-            <span class="vehicle-card__status ${vehicle.status === 'active' ? '' : 'vehicle-card__status--muted'}">
-              ${vehicle.status === 'active' ? '掲載中' : '準備中'}
-            </span>
-          </div>
-          <h3 class="vehicle-card__title">${vehicle.name}</h3>
           <p class="vehicle-card__type">${vehicle.bodyType}</p>
-          <p class="vehicle-card__dimension">内寸: ${vehicle.dimensions}</p>
+          <h3 class="vehicle-card__title">${vehicle.name}</h3>
+          <p class="vehicle-card__dimension">${metaLabel}: ${metaValue}</p>
           <ul class="vehicle-chip-list">${chips}</ul>
-          ${link}
+          <a href="#detail-${vehicle.id}" class="vehicle-card__link">詳細を見る</a>
         </article>
       `;
     })
     .join('');
 
-  detailContainer.innerHTML = activeVehicles
+  detailContainer.innerHTML = vehicles
     .map((vehicle) => {
       const specs = vehicle.specs
         .map(
@@ -231,19 +273,6 @@ document.addEventListener('DOMContentLoaded', () => {
         </section>
       `;
     })
-    .join('');
-
-  upcomingContainer.innerHTML = upcomingVehicles
-    .map(
-      (vehicle, index) => `
-        <article class="placeholder-card">
-          <p class="placeholder-card__index">Vehicle ${String(activeVehicles.length + index + 1).padStart(2, '0')}</p>
-          <h3 class="placeholder-card__title">${vehicle.name}</h3>
-          <p class="placeholder-card__body">${vehicle.bodyType}</p>
-          <p class="placeholder-card__meta">${vehicle.dimensions}</p>
-        </article>
-      `
-    )
     .join('');
 
   document.querySelectorAll('[data-gallery-thumb]').forEach((button) => {
