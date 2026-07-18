@@ -65,6 +65,23 @@
         overflow-x: hidden;
       }
 
+      .brand-wordmark {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        color: #080b12;
+        font-family: Arial Black, Arial, sans-serif;
+        font-size: 1.2rem;
+        font-weight: 900;
+        letter-spacing: -0.075em;
+        line-height: 1.02;
+        transform: skewX(-3deg);
+      }
+
+      .brand-wordmark__line {
+        display: block;
+      }
+
       .nav-link {
         position: relative;
         display: inline-flex;
@@ -274,17 +291,31 @@
       }
 
       .gallery-main {
+        display: block;
         overflow: hidden;
         border-radius: 0.5rem;
         background: #e9f0f7;
         border: 1px solid rgba(212, 223, 235, 0.85);
         aspect-ratio: 4 / 3;
+        padding: 0;
+        width: 100%;
+        cursor: zoom-in;
+        transition: aspect-ratio 0.2s ease;
+      }
+
+      .gallery-main.is-portrait {
+        aspect-ratio: 3 / 4;
+      }
+
+      .gallery-main:focus-visible {
+        outline: 3px solid rgba(29, 160, 230, 0.9);
+        outline-offset: 4px;
       }
 
       .gallery-main img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
       }
 
       .gallery-thumbs {
@@ -313,6 +344,92 @@
       .gallery-thumb.is-active {
         border-color: rgba(29, 160, 230, 0.85);
         transform: translateY(-2px);
+      }
+
+      .gallery-modal {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        display: grid;
+        place-items: center;
+        padding: 1.25rem;
+        background: rgba(5, 14, 24, 0.88);
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.2s ease;
+      }
+
+      .gallery-modal.is-open {
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .gallery-modal__content {
+        position: relative;
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr) auto;
+        align-items: center;
+        gap: 0.75rem;
+        width: min(100%, 1100px);
+      }
+
+      .gallery-modal__image-wrap {
+        display: grid;
+        place-items: center;
+        min-height: min(70vh, 680px);
+      }
+
+      .gallery-modal__image {
+        display: block;
+        max-width: 100%;
+        max-height: 78vh;
+        border-radius: 0.5rem;
+        object-fit: contain;
+        box-shadow: 0 24px 56px rgba(0, 0, 0, 0.36);
+      }
+
+      .gallery-modal__close,
+      .gallery-modal__nav {
+        display: inline-grid;
+        place-items: center;
+        border: 0;
+        color: #fff;
+        background: rgba(255, 255, 255, 0.14);
+        transition: background 0.2s ease, transform 0.2s ease;
+      }
+
+      .gallery-modal__close:hover,
+      .gallery-modal__close:focus-visible,
+      .gallery-modal__nav:hover,
+      .gallery-modal__nav:focus-visible {
+        background: rgba(29, 160, 230, 0.8);
+        transform: scale(1.04);
+      }
+
+      .gallery-modal__close {
+        position: absolute;
+        top: -0.2rem;
+        right: 0;
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 9999px;
+      }
+
+      .gallery-modal__nav {
+        width: 2.75rem;
+        height: 2.75rem;
+        border-radius: 9999px;
+      }
+
+      .gallery-modal__caption {
+        margin: 0.85rem 3.5rem 0;
+        text-align: center;
+        color: rgba(255, 255, 255, 0.82);
+        font-size: 0.875rem;
+      }
+
+      body.is-gallery-modal-open {
+        overflow: hidden;
       }
 
       .vehicle-info-stack {
@@ -471,6 +588,28 @@
         .vehicle-detail-card {
           padding: 1.2rem;
         }
+
+        .gallery-modal {
+          padding: 1rem 0.5rem;
+        }
+
+        .gallery-modal__content {
+          grid-template-columns: 2.5rem minmax(0, 1fr) 2.5rem;
+          gap: 0.25rem;
+        }
+
+        .gallery-modal__image-wrap {
+          min-height: 60vh;
+        }
+
+        .gallery-modal__image {
+          max-height: 70vh;
+        }
+
+        .gallery-modal__nav {
+          width: 2.4rem;
+          height: 2.4rem;
+        }
       }
     </style>
     <script src="/assets/js/main.js" defer></script>
@@ -486,8 +625,8 @@
     <header id="site-header" class="sticky top-0 z-40 border-b border-line-ice/70 bg-white/85 backdrop-blur transition-shadow">
       <div class="mx-auto flex h-20 w-full max-w-6xl items-center justify-between px-6">
         <a href="/" class="flex items-center gap-3">
-          <img src="/assets/images/logo_image.jpg" alt="SOLEX LOGISTICS ロゴ" class="h-12 w-auto" />
-          <span class="text-lg font-semibold text-brand-ink uppercase tracking-wide-en">SOLEX LOGISTICS</span>
+          <img src="/assets/images/logo_image.jpg" alt="" class="h-12 w-auto" />
+          <span class="brand-wordmark" aria-label="SOLEX LOGISTICS"><span class="brand-wordmark__line">SOLEX</span><span class="brand-wordmark__line">LOGISTICS</span></span>
         </a>
         <nav class="hidden items-center gap-8 text-sm font-medium text-brand-ink/75 md:flex">
           <a href="/" class="nav-link focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-brand-sky">ホーム</a>
@@ -530,8 +669,8 @@
       >
         <div class="flex items-center justify-between">
           <a href="/" class="flex items-center gap-3">
-            <img src="/assets/images/logo_image.jpg" alt="SOLEX LOGISTICS ロゴ" class="h-10 w-auto" />
-            <span class="text-lg font-semibold text-brand-ink uppercase tracking-wide-en">SOLEX LOGISTICS</span>
+            <img src="/assets/images/logo_image.jpg" alt="" class="h-10 w-auto" />
+            <span class="brand-wordmark" aria-label="SOLEX LOGISTICS"><span class="brand-wordmark__line">SOLEX</span><span class="brand-wordmark__line">LOGISTICS</span></span>
           </a>
           <button
             type="button"

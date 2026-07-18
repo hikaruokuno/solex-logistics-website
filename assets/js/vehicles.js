@@ -2,6 +2,49 @@ document.addEventListener('DOMContentLoaded', () => {
   // Public vehicle lineup data. Add new vehicles to this array as needed.
   const vehicles = [
     {
+      id: '4t-wide-wing',
+      name: '4トン ワイドウイング車',
+      bodyType: 'ワイドウイング / バン型',
+      cardMetaLabel: '最大積載量',
+      cardMetaValue: '2,850kg',
+      summary: '大きな荷量にも対応しやすく、側面を大きく開けて積み下ろしができるワイドウイング車です。',
+      suitableFor: ['パレット貨物', '大型什器・資材', 'まとまった荷量の輸送', 'フォークリフトを使う積み下ろし'],
+      specs: [
+        ['車両名', '4トン ワイドウイング車'],
+        ['最大積載量', '2,850kg'],
+        ['車両寸法（長さ×幅×高さ）', '863×249×352cm'],
+        ['乗車定員', '2名'],
+        ['燃料の種類', '軽油']
+      ],
+      features: [
+        '左右のウイングを大きく開けられるため、側面からの積み下ろしに対応しやすい車両です。',
+        'パレット貨物や大型の什器・資材など、まとまった荷量を運ぶ場面に向いています。',
+        '荷役環境や荷物のサイズに合わせた輸送をご提案します。'
+      ],
+      images: [
+        {
+          src: '/assets/images/vehicles/4t-wide-wing-front.png',
+          alt: '4トン ワイドウイング車の前方斜め外観'
+        },
+        {
+          src: '/assets/images/vehicles/4t-wide-wing-front-side.jpg',
+          alt: '4トン ワイドウイング車の前方斜め外観（側面）'
+        },
+        {
+          src: '/assets/images/vehicles/4t-wide-wing-open-front.png',
+          alt: '4トン ワイドウイング車の前方外観'
+        },
+        {
+          src: '/assets/images/vehicles/4t-wide-wing-open-side.png',
+          alt: '4トン ワイドウイング車のウイングを開いた側面外観'
+        },
+        {
+          src: '/assets/images/vehicles/4t-wide-wing-open-rear.jpg',
+          alt: '4トン ワイドウイング車のウイングを開いた後方外観'
+        }
+      ]
+    },
+    {
       id: '2t-wide-long',
       name: '2トン車 ワイドロング',
       bodyType: 'ワイドロング / 箱車',
@@ -225,14 +268,14 @@ document.addEventListener('DOMContentLoaded', () => {
           </div>
           <div class="vehicle-detail-grid">
             <div class="gallery-panel">
-              <div class="gallery-main">
+              <button type="button" class="gallery-main" data-gallery-main="${vehicle.id}" aria-label="${vehicle.name}の写真を拡大表示">
                 <img
                   src="${vehicle.images[0].src}"
                   alt="${vehicle.images[0].alt}"
                   id="gallery-main-${vehicle.id}"
                   loading="lazy"
                 />
-              </div>
+              </button>
               <div class="gallery-thumbs">
                 ${thumbs}
               </div>
@@ -287,10 +330,150 @@ document.addEventListener('DOMContentLoaded', () => {
       mainImage.setAttribute('src', imageSrc);
       mainImage.setAttribute('alt', imageAlt);
 
+      const mainPanel = mainImage.closest('.gallery-main');
+      const updateAspectRatio = () => {
+        if (!mainPanel || !mainImage.naturalWidth || !mainImage.naturalHeight) return;
+        mainPanel.classList.toggle('is-portrait', mainImage.naturalHeight > mainImage.naturalWidth);
+      };
+
+      if (mainImage.complete) updateAspectRatio();
+      else mainImage.addEventListener('load', updateAspectRatio, { once: true });
+
       document.querySelectorAll(`[data-gallery-thumb="${targetId}"]`).forEach((thumb) => {
         thumb.classList.remove('is-active');
       });
       button.classList.add('is-active');
     });
+  });
+
+  document.querySelectorAll('[data-gallery-main]').forEach((button) => {
+    const mainImage = button.querySelector('img');
+    if (!mainImage) return;
+
+    const updateAspectRatio = () => {
+      button.classList.toggle('is-portrait', mainImage.naturalHeight > mainImage.naturalWidth);
+    };
+
+    if (mainImage.complete) updateAspectRatio();
+    else mainImage.addEventListener('load', updateAspectRatio, { once: true });
+  });
+
+  const modal = document.createElement('div');
+  modal.className = 'gallery-modal';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-label', '車両写真の拡大表示');
+  modal.setAttribute('aria-hidden', 'true');
+  modal.innerHTML = `
+    <div class="gallery-modal__content">
+      <button type="button" class="gallery-modal__nav" data-gallery-modal-prev aria-label="前の写真">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m15 18-6-6 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </button>
+      <div>
+        <div class="gallery-modal__image-wrap"><img class="gallery-modal__image" src="" alt="" /></div>
+        <p class="gallery-modal__caption"></p>
+      </div>
+      <button type="button" class="gallery-modal__nav" data-gallery-modal-next aria-label="次の写真">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 18 6-6-6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+      </button>
+      <button type="button" class="gallery-modal__close" data-gallery-modal-close aria-label="拡大表示を閉じる">
+        <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+      </button>
+    </div>
+  `;
+  document.body.appendChild(modal);
+
+  const modalImage = modal.querySelector('.gallery-modal__image');
+  const modalCaption = modal.querySelector('.gallery-modal__caption');
+  const closeButton = modal.querySelector('[data-gallery-modal-close]');
+  const previousButton = modal.querySelector('[data-gallery-modal-prev]');
+  const nextButton = modal.querySelector('[data-gallery-modal-next]');
+  let activeVehicle = null;
+  let activeImageIndex = 0;
+  let openingButton = null;
+
+  const updateModalImage = () => {
+    if (!activeVehicle || !modalImage || !modalCaption) return;
+    const image = activeVehicle.images[activeImageIndex];
+    modalImage.src = image.src;
+    modalImage.alt = image.alt;
+    modalCaption.textContent = `${activeImageIndex + 1} / ${activeVehicle.images.length}　${image.alt}`;
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('is-open');
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('is-gallery-modal-open');
+    if (openingButton) openingButton.focus();
+  };
+
+  const moveModalImage = (direction) => {
+    if (!activeVehicle) return;
+    activeImageIndex = (activeImageIndex + direction + activeVehicle.images.length) % activeVehicle.images.length;
+    updateModalImage();
+  };
+
+  document.querySelectorAll('[data-gallery-main]').forEach((button) => {
+    button.addEventListener('click', () => {
+      const vehicleId = button.getAttribute('data-gallery-main');
+      const mainImage = button.querySelector('img');
+      activeVehicle = vehicles.find((vehicle) => vehicle.id === vehicleId) || null;
+      if (!activeVehicle || !mainImage) return;
+
+      activeImageIndex = Math.max(0, activeVehicle.images.findIndex((image) => image.src === mainImage.getAttribute('src')));
+      openingButton = button;
+      updateModalImage();
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.classList.add('is-gallery-modal-open');
+      if (closeButton) closeButton.focus();
+    });
+  });
+
+  if (previousButton) previousButton.addEventListener('click', () => moveModalImage(-1));
+  if (nextButton) nextButton.addEventListener('click', () => moveModalImage(1));
+  if (closeButton) closeButton.addEventListener('click', closeModal);
+
+  modal.addEventListener('click', (event) => {
+    if (event.target === modal) closeModal();
+  });
+
+  const modalImageWrap = modal.querySelector('.gallery-modal__image-wrap');
+  let touchStartX = null;
+
+  if (modalImageWrap) {
+    modalImageWrap.addEventListener('touchstart', (event) => {
+      touchStartX = event.changedTouches[0].clientX;
+    }, { passive: true });
+
+    modalImageWrap.addEventListener('touchend', (event) => {
+      if (touchStartX === null) return;
+      const distanceX = event.changedTouches[0].clientX - touchStartX;
+      touchStartX = null;
+      if (Math.abs(distanceX) < 48) return;
+      moveModalImage(distanceX < 0 ? 1 : -1);
+    }, { passive: true });
+  }
+
+  document.addEventListener('keydown', (event) => {
+    if (!modal.classList.contains('is-open')) return;
+
+    if (event.key === 'Tab') {
+      const focusableButtons = modal.querySelectorAll('button:not([disabled])');
+      const firstButton = focusableButtons[0];
+      const lastButton = focusableButtons[focusableButtons.length - 1];
+
+      if (event.shiftKey && document.activeElement === firstButton) {
+        event.preventDefault();
+        lastButton.focus();
+      } else if (!event.shiftKey && document.activeElement === lastButton) {
+        event.preventDefault();
+        firstButton.focus();
+      }
+    }
+
+    if (event.key === 'Escape') closeModal();
+    if (event.key === 'ArrowLeft') moveModalImage(-1);
+    if (event.key === 'ArrowRight') moveModalImage(1);
   });
 });
