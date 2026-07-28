@@ -4,7 +4,7 @@
 - 目的: 金融機関および新規取引企業に信頼感を与えるコーポレートサイトを制作し、社名変更（旧: 株式会社SOLEX → 新: 株式会社SOLEX LOGISTICS）を周知する。
 - ページ構成: 基本は 1 ページ構成。将来的な下層ページ拡張（採用詳細・ニュース）を想定した設計とする。
 - 使用技術: HTML5 + Tailwind CSS (CDN) + バニラ JavaScript。ビルドレスで Cloudflare Pages へデプロイ。
-- 画像アセット: `logo_image.jpg`、`ribbon-texture.png`（斜め帯用ノイズテクスチャ）。すべて `/assets/images/` 配下に配置。
+- 画像アセット: `logo-horizontal.png`、`logo-mark.png`、`ribbon-texture.png`（斜め帯用ノイズテクスチャ）。すべて `/assets/images/` 配下に配置。
 
 ## 2. デプロイ要件
 - Cloudflare Pages に静的サイトとして配置。リポジトリのルートに `index.html`, `assets/` フォルダを置く。
