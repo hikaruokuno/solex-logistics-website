@@ -45,6 +45,49 @@ document.addEventListener('DOMContentLoaded', () => {
       ]
     },
     {
+      id: '3t-wing',
+      name: '3トン ウイング車',
+      bodyType: 'ウイング / バン型',
+      cardMetaLabel: '最大積載量',
+      cardMetaValue: '3,850kg',
+      summary: '側面を大きく開けられ、パレット貨物やまとまった荷物を効率よく積み下ろしできるウイング車です。',
+      suitableFor: ['パレット貨物', '什器・資材', 'まとまった荷量の輸送', '側面からの積み下ろし'],
+      specs: [
+        ['車両名', '3トン ウイング車'],
+        ['最大積載量', '3,850kg'],
+        ['車両寸法（長さ×幅×高さ）', '646×218×331cm'],
+        ['乗車定員', '3名'],
+        ['燃料の種類', '軽油']
+      ],
+      features: [
+        '左右のウイングを大きく開けられるため、側面からスムーズに積み下ろしできます。',
+        '最大積載量3,850kgで、パレット貨物や什器・資材など、まとまった荷量の輸送に向いています。',
+        '全長646cm・全幅218cmの車体で、積載量と取り回しのバランスに優れた車両です。'
+      ],
+      images: [
+        {
+          src: '/assets/images/vehicles/3t-wing-front.jpg',
+          alt: '3トン ウイング車の前方斜め外観'
+        },
+        {
+          src: '/assets/images/vehicles/3t-wing-side.jpg',
+          alt: '3トン ウイング車の側面外観'
+        },
+        {
+          src: '/assets/images/vehicles/3t-wing-open-front.jpg',
+          alt: '3トン ウイング車のウイングを開いた前方斜め外観'
+        },
+        {
+          src: '/assets/images/vehicles/3t-wing-open-rear.jpg',
+          alt: '3トン ウイング車のウイングを開いた後方外観と荷室'
+        },
+        {
+          src: '/assets/images/vehicles/3t-wing-cargo.jpg',
+          alt: '3トン ウイング車の荷台と側面開口部'
+        }
+      ]
+    },
+    {
       id: '2t-wide-long',
       name: '2トン車 ワイドロング',
       bodyType: 'ワイドロング / 箱車',
